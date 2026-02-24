@@ -400,3 +400,299 @@ footer strong {
         margin: 0 10px;
     }
 }
+
+/* --- தமிழ் சோலை - முழுமையான நவீன CSS (style.css) --- */
+
+:root {
+    --primary-color: #b33939; /* ஆழ்ந்த சிவப்பு - தமிழின் அடையாளம் */
+    --secondary-color: #2c3e50; /* நேர்த்தியான நீல-சாம்பல் */
+    --accent-color: #d35400; /* ஆரஞ்சு-சிவப்பு */
+    --gold: #f1c40f;
+    --white: #ffffff;
+    --bg-light: #fdfaf6;
+    --text-dark: #2d3436;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mukta Malar', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.8;
+    scroll-behavior: smooth;
+}
+
+/* --- தலைப்பு மற்றும் மெனு (Navigation) --- */
+header {
+    background-color: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8%;
+}
+
+.logo {
+    font-family: 'Arima', cursive;
+    font-size: 1.8rem;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* --- பேனர் மற்றும் ஹீரோ பகுதி (Banner) --- */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                url('https://images.unsplash.com/photo-1590595906931-81f04f0ccebb?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.page-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    margin-bottom: 40px;
+}
+
+.hero-content h1, .page-banner h1 {
+    font-family: 'Arima', serif;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+/* --- அறிமுகப் பெட்டி (Intro Box) --- */
+.intro-box {
+    text-align: center;
+    max-width: 850px;
+    margin: -60px auto 60px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-top: 6px solid var(--primary-color);
+    position: relative;
+    z-index: 10;
+}
+
+/* --- உள்ளடக்கம் (Main Content) --- */
+.container {
+    max-width: 1140px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- பக்கப் பிரிவுகள் (About & Activities Sections) --- */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.about-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    flex: 1.2;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 0.8;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: 8px solid var(--white);
+}
+
+/* --- அட்டவணை மற்றும் வரிசைமுறை (Timeline) --- */
+.timeline-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 0 10px 10px 0;
+}
+
+.timeline-item strong {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* --- கிரிட் சிஸ்டம் (Grid for Files & Events) --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.glass-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: 0.4s ease;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+}
+
+.glass-card .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* --- பொத்தான்கள் (Buttons) --- */
+.card-btn, .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.card-btn:hover, .cta-button:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* --- பட்டியல்கள் (Goal Lists) --- */
+.goal-list {
+    list-style: none;
+    padding: 0;
+}
+
+.goal-list li {
+    background: #f1f2f6;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    position: relative;
+    padding-left: 45px;
+}
+
+.goal-list li::before {
+    content: "\f058"; /* FontAwesome Check Icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    color: var(--primary-color);
+}
+
+/* --- தலைப்பு ஸ்டைல் --- */
+.section-title-left {
+    font-size: 2.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.underline-left {
+    width: 70px;
+    height: 5px;
+    background: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+/* --- அடித்தட்டு (Footer) --- */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 80px;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+/* --- அலைபேசி வடிவமைப்பு (Mobile Responsive) --- */
+@media (max-width: 850px) {
+    .about-section, .about-section.reverse {
+        flex-direction: column;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li a {
+        margin: 0 5px;
+        font-size: 0.9rem;
+    }
+}
