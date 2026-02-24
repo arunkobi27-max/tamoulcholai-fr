@@ -1,0 +1,190 @@
+:root {
+    --primary-color: #d35400; /* ஆழமான செம்மண் நிறம் - தமிழின் அடையாளம் */
+    --secondary-color: #2c3e50;
+    --accent-color: #f39c12;
+    --glass-bg: rgba(255, 255, 255, 0.9);
+}
+
+body {
+    font-family: 'Mukta Malar', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfaf6;
+    color: var(--secondary-color);
+    scroll-behavior: smooth;
+}
+
+/* Hero Section with Image Background */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1590595906931-81f04f0ccebb?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+}
+
+.logo {
+    font-family: 'Arima', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Hero Content */
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: 0.4s;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(211, 84, 0, 0.4);
+}
+
+/* Grid System */
+.container {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.underline {
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: -10px auto 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Glassmorphism Card Style */
+.glass-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.4s;
+    border: 1px solid #eee;
+}
+
+.glass-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--primary-color);
+}
+
+.icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+}
+
+/* அறிமுக உரைக்கான ஸ்டைல் */
+.intro-box {
+    text-align: center;
+    max-width: 800px;
+    margin: -50px auto 60px; /* Hero பகுதிக்கு சற்று மேலே இருக்குமாறு */
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-left: 8px solid var(--primary-color);
+    position: relative;
+    z-index: 10;
+}
+
+.intro-box p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #444;
+    font-weight: 500;
+    margin: 0;
+}
