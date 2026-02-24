@@ -189,21 +189,98 @@ footer {
     margin: 0;
 }
 
-/* About Page Specific Styles */
+/* --- தமிழ் சோலை - பிரத்யேக CSS (style.css) --- */
+
+:root {
+    --primary-color: #b33939; /* ஆழ்ந்த சிவப்பு - தமிழின் அடையாளம் */
+    --secondary-color: #2c3e50;
+    --accent-color: #d35400;
+    --text-color: #333;
+    --bg-light: #fdfaf6;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Mukta Malar', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+/* --- தலைப்பு மற்றும் மெனு (Navigation) --- */
+header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+}
+
+.logo {
+    font-family: 'Arima', cursive;
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #f1c40f;
+}
+
+/* --- பக்கப் பேனர் (Banner) --- */
 .page-banner {
-    background: linear-gradient(rgba(179, 57, 57, 0.8), rgba(179, 57, 57, 0.8)), url('https://images.unsplash.com/photo-1590595906931-81f04f0ccebb?auto=format&fit=crop&q=80&w=1500');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1590595906931-81f04f0ccebb?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    background-position: center;
     height: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--white);
+    text-align: center;
 }
 
+.page-banner h1 {
+    font-size: 3rem;
+    font-family: 'Arima', serif;
+    margin: 0;
+}
+
+/* --- உள்ளடக்கம் (Container) --- */
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* --- சுமார் (About) பிரிவுகள் --- */
 .about-section {
     display: flex;
-    align-items: center;
-    gap: 50px;
-    margin: 60px 0;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 80px;
 }
 
 .about-section.reverse {
@@ -211,32 +288,34 @@ footer {
 }
 
 .about-text {
-    flex: 1;
+    flex: 1.2;
 }
 
 .about-text p {
+    font-size: 1.15rem;
     text-align: justify;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    color: #444;
 }
 
 .about-image {
-    flex: 1;
-    text-align: center;
+    flex: 0.8;
+    position: relative;
 }
 
 .about-image img {
     width: 100%;
-    max-width: 500px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    transition: 0.4s;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border: 5px solid var(--white);
+    transition: transform 0.4s ease;
 }
 
 .about-image img:hover {
-    transform: scale(1.02);
+    transform: translateY(-10px);
 }
 
+/* --- தலைப்புகள் --- */
 .section-title-left {
     font-size: 2.2rem;
     color: var(--primary-color);
@@ -247,33 +326,77 @@ footer {
     width: 60px;
     height: 4px;
     background: var(--accent-color);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    border-radius: 2px;
 }
 
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: #eee;
-    margin: 40px 0;
-}
-
+/* --- நோக்கங்கள் பட்டியல் (Goal List) --- */
 .goal-list {
     list-style: none;
     padding: 0;
+    margin-top: 25px;
 }
 
 .goal-list li {
-    background: #fff;
-    margin-bottom: 10px;
-    padding: 12px 20px;
-    border-left: 4px solid var(--accent-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background: var(--white);
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     font-weight: 500;
+    font-size: 1.05rem;
+    transition: 0.3s;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+.goal-list li:hover {
+    transform: translateX(10px);
+    background-color: #fff9f9;
+}
+
+/* --- பிரிப்பான் (Divider) --- */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+    margin: 60px 0;
+}
+
+/* --- அடித்தட்டு (Footer) --- */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+footer strong {
+    color: var(--accent-color);
+}
+
+/* --- மொபைல் போன்களுக்கான மாற்றங்கள் (Responsiveness) --- */
+@media (max-width: 900px) {
     .about-section, .about-section.reverse {
         flex-direction: column;
+    }
+    
+    .about-image {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .page-banner h1 {
+        font-size: 2.2rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
     }
 }
