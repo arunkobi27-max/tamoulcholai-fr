@@ -3,89 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamoul Cholai France | தமிழ் சோலை பிரான்சு</title>
-    <style>
-        body { font-family: 'Arial', sans-serif; line-height: 1.6; margin: 0; color: #333; transition: 0.3s; }
-        header { background: #d32f2f; color: white; padding: 2rem; text-align: center; border-bottom: 5px solid #ffeb3b; }
-        nav { background: #fff; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); sticky: top; }
-        nav a { margin: 0 15px; text-decoration: none; color: #d32f2f; font-weight: bold; cursor: pointer; }
-        .lang-switch { background: #ffeb3b; color: #333; border: none; padding: 8px 15px; font-weight: bold; border-radius: 20px; cursor: pointer; margin-left: 20px; }
-        .container { max-width: 900px; margin: 20px auto; padding: 20px; }
-        .hero { background: #fff9c4; padding: 40px; border-radius: 15px; text-align: center; border: 1px solid #fbc02d; }
-        section { margin-top: 30px; padding: 20px; border-left: 5px solid #d32f2f; background: #fafafa; }
-        .footer { background: #212121; color: white; text-align: center; padding: 1.5rem; margin-top: 50px; }
-        .btn { display: inline-block; background: #d32f2f; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 15px; }
-        
-        /* Cacher la langue non sélectionnée */
-        .lang-fr { display: none; }
-    </style>
+    <title>தமிழ் சோலை | முகப்பு</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<nav>
-    <span class="lang-ta">முகப்பு</span>
-    <span class="lang-fr">Accueil</span> |
-    <span class="lang-ta">எம்மைப் பற்றி</span>
-    <span class="lang-fr">À Propos</span>
-    <button class="lang-switch" onclick="toggleLanguage()">Français / தமிழ்</button>
-</nav>
+    <div class="hero-section">
+        <header>
+            <nav>
+                <div class="logo">தமிழ் சோலை</div>
+                <ul>
+                    <li><a href="index.html" class="active">முகப்பு</a></li>
+                    <li><a href="about.html">எம்மைப்பற்றி</a></li>
+                    <li><a href="activities.html">செயற்பாடுகள்</a></li>
+                    <li><a href="events.html">நிகழ்வுகள்</a></li>
+                    <li><a href="files.html">கோப்புகள்</a></li>
+                </ul>
+            </nav>
+        </header>
 
-<header>
-    <h1 class="lang-ta">தமிழ் சோலை பிரான்சு</h1>
-    <h1 class="lang-fr">Tamoul Cholai France</h1>
-    <p class="lang-ta">பிரான்சில் தமிழ் மொழியையும் பண்பாட்டையும் வளர்த்தல்</p>
-    <p class="lang-fr">Promouvoir la langue et la culture tamoule en France</p>
-</header>
-
-<div class="container">
-    <section class="hero">
-        <h2 class="lang-ta">வரவேற்கிறோம்!</h2>
-        <h2 class="lang-fr">Bienvenue !</h2>
-        <p class="lang-ta">தமிழ் மொழி வகுப்புகள் மற்றும் கலாச்சார நிகழ்வுகள் பற்றிய தகவல்களை இங்கே காணலாம்.</p>
-        <p class="lang-fr">Retrouvez les informations sur nos cours de tamoul et nos événements culturels.</p>
-        <a href="#" class="btn lang-ta">எங்களுடன் இணையுங்கள்</a>
-        <a href="#" class="btn lang-fr">Nous rejoindre</a>
-    </section>
-
-    <section>
-        <h2 class="lang-ta">எங்கள் செயல்பாடுகள்</h2>
-        <h2 class="lang-fr">Nos Activités</h2>
-        <ul class="lang-ta">
-            <li>தமிழ் மொழிப் பாடங்கள்</li>
-            <li>கலை மற்றும் பண்பாட்டு விழாக்கள்</li>
-            <li>இலக்கியச் சந்திப்புகள்</li>
-        </ul>
-        <ul class="lang-fr">
-            <li>Cours de langue tamoule</li>
-            <li>Festivals artistiques et culturels</li>
-            <li>Rencontres littéraires</li>
-        </ul>
-    </section>
+       <div class="hero-content">
+    <h1>தமிழ் இனிமை! நம் பெருமை!</h1>
+    <p style="font-size: 1.5rem; color: #f39c12; font-weight: bold;">தமிழ்ச்சோலைத் தலைமைப் பணியகம் - பிரான்சு</p>
 </div>
 
-<div class="footer">
-    <p class="lang-ta">&copy; 2026 தமிழ் சோலை பிரான்சு - அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை</p>
-    <p class="lang-fr">&copy; 2026 Tamoul Cholai France - Tous droits réservés</p>
-</div>
+<main class="container">
+    <section id="about-mini" class="intro-box">
+        <p>
+            பிரான்சில் வளரும் எம் இளந்தலைமுறையினரைத் தமிழோடும் தமிழ்க் கலைகளோடும் தமிழ்ப்பண்பாட்டோடும் இணைக்கும் கல்விசார் அமைப்பு.
+        </p>
+    </section>
 
-<script>
-    let currentLang = 'ta';
-
-    function toggleLanguage() {
-        const frElements = document.querySelectorAll('.lang-fr');
-        const taElements = document.querySelectorAll('.lang-ta');
-
-        if (currentLang === 'ta') {
-            taElements.forEach(el => el.style.display = 'none');
-            frElements.forEach(el => el.style.display = 'block');
-            currentLang = 'fr';
-        } else {
-            frElements.forEach(el => el.style.display = 'none');
-            taElements.forEach(el => el.style.display = 'block');
-            currentLang = 'ta';
-        }
-    }
-</script>
+    <section id="files" class="section-title">
+        <h2>எமது ஆவணங்கள்</h2>
+        <div class="underline"></div>
+    </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
+    </footer>
 
 </body>
 </html>
