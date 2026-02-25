@@ -265,118 +265,6 @@ footer strong {
     .pdf-card img { height: 200px; }
 }
 
-/* --- Files Page: Consistency & Rich Modern Style --- */
-
-/* மற்ற பக்கங்களில் உள்ள அதே வண்ணத்தைப் பயன்படுத்த (Purple Gradient) */
-.files-container {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* முதன்மைப் பிரிவுகள் (Main Categories) */
-.files-section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.files-section-title h2 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.5rem;
-    color: var(--secondary);
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
-/* 3 முக்கியப் பெட்டிகளுக்கான அமைப்பு */
-.files-main-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-}
-
-/* Premium Card Style (அரையாண்டு, பொதுத் தேர்வு, கட்டுரை) */
-.category-rich-card {
-    background: var(--white);
-    border-radius: 35px;
-    padding: 60px 40px;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: var(--shadow-rich);
-    border: 1px solid rgba(0,0,0,0.03);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Hover செய்யும்போது ஏற்படும் மாற்றம் */
-.category-rich-card:hover {
-    transform: translateY(-20px);
-    box-shadow: 0 40px 80px rgba(108, 92, 231, 0.2);
-    border-color: var(--primary-light);
-}
-
-/* Card-க்குள் இருக்கும் ஐகான் */
-.category-icon-circle {
-    width: 100px;
-    height: 100px;
-    background: var(--gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
-}
-
-.category-icon-circle i {
-    font-size: 3rem;
-    color: var(--white);
-}
-
-.category-rich-card h3 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 1.8rem;
-    color: var(--secondary);
-    margin-bottom: 15px;
-}
-
-.category-rich-card p {
-    font-size: 1.05rem;
-    color: #636e72;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-/* பொத்தான் (Button Inside Card) */
-.category-action-btn {
-    background: var(--secondary);
-    color: var(--white);
-    padding: 12px 35px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.4s;
-}
-
-.category-rich-card:hover .category-action-btn {
-    background: var(--gradient);
-    transform: scale(1.1);
-}
-
-/* அலைபேசி வடிவமைப்பு */
-@media (max-width: 768px) {
-    .files-main-grid {
-        grid-template-columns: 1fr;
-        padding: 0 10px;
-    }
-}
 /* --- Events Page: Ultra-Rich Modern Styling --- */
 
 /* நிகழ்வு அறிமுகப் பகுதி (Event Intro Section) */
@@ -491,5 +379,129 @@ footer strong {
     
     .event-details img {
         border-radius: 20px;
+    }
+}
+
+/* --- Files Page: Ultra-Modern & Rich Style --- */
+
+/* கோப்புகள் பக்கத்தின் பொதுவான அமைப்பு */
+.files-wrapper {
+    padding: 80px 0;
+    background: radial-gradient(circle at top right, rgba(108, 92, 231, 0.05), transparent);
+}
+
+.files-header-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.files-header-content h2 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 3rem;
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+/* 3 பிரதான பெட்டிகளுக்கான கிரிட் (Half-yearly, Public, Essay) */
+.files-main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    perspective: 1000px;
+}
+
+/* நவீன கோப்பு அட்டை (Modern Category Card) */
+.category-glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    padding: 60px 40px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-glass-card:hover {
+    transform: translateY(-20px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(108, 92, 231, 0.2);
+    background: #ffffff;
+}
+
+/* கார்டுக்குள் இருக்கும் ஐகான் வட்டம் */
+.category-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    border-radius: 35% 65% 70% 30% / 30% 35% 65% 70%; /* நவீன வளைந்த வடிவம் */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
+    transition: 0.5s;
+}
+
+.category-glass-card:hover .category-icon-wrapper {
+    border-radius: 50%;
+    transform: rotate(15deg);
+}
+
+.category-icon-wrapper i {
+    font-size: 3.5rem;
+    color: #ffffff;
+}
+
+.category-glass-card h3 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.category-glass-card p {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+/* கார்டு பொத்தான் */
+.category-view-btn {
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.category-glass-card:hover .category-view-btn {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.4);
+    transform: scale(1.1);
+}
+
+/* அலைபேசி வடிவமைப்பு */
+@media (max-width: 768px) {
+    .files-main-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+    .files-header-content h2 {
+        font-size: 2.2rem;
     }
 }
