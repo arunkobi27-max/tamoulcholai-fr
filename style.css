@@ -1,4 +1,4 @@
-/* --- தமிழ் சோலை: Ultra-Modern Unified Style --- */
+/* --- தமிழ் சோலை: Ultra-Modern & Rich Professional Style (Version Corrigée) --- */
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&family=Poppins:wght@300;400;600&display=swap');
 
@@ -7,10 +7,10 @@
     --primary-light: #9b59b6;
     --accent: #e67e22;         /* Deep Orange */
     --secondary: #2c3e50;      /* Midnight Blue */
-    --gold: #f1c40f;           /* Golden Yellow */
+    --gold: #f1c40f;           /* Golden Yellow (Ajouté car manquant) */
     --text-main: #2d3436;
     --white: #ffffff;
-    --bg-light: #f8f9fa;
+    --glass: rgba(255, 255, 255, 0.85);
     --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
     --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
 }
@@ -24,20 +24,20 @@
 
 body {
     font-family: 'Baloo Thambi 2', cursive;
-    background: var(--bg-light);
+    background: #f8f9fa;
     color: var(--text-main);
     overflow-x: hidden;
     line-height: 1.7;
 }
 
-/* --- Navigation & Header --- */
+/* --- Navigation --- */
 header {
-    background: rgba(44, 62, 80, 0.98);
+    background: rgba(44, 62, 80, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 0;
+    padding: 10px 0; /* Un peu réduit pour plus de finesse */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,119 +54,160 @@ nav {
     display: flex;
     align-items: center;
     font-family: 'Kavivanar', cursive;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Ajusté */
     color: var(--gold);
     text-decoration: none;
 }
 
 .logo img {
-    height: 50px;
+    height: 50px; /* Taille fixe pour éviter les sauts de mise en page */
+    width: auto;
     margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: rotate(10deg) scale(1.1);
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 5px;
+    gap: 10px;
 }
 
 nav ul li a {
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
-    padding: 10px 18px;
+    padding: 10px 20px;
     border-radius: 12px;
+    font-size: 1rem;
 }
 
 nav ul li a:hover, nav ul li a.active {
     background: var(--gradient);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+    transform: translateY(-2px);
     color: white;
 }
 
-/* --- Common Page Banner --- */
+/* --- Hero Banner --- */
 .page-banner {
-    background: linear-gradient(45deg, rgba(108, 92, 231, 0.85), rgba(155, 89, 182, 0.85)), 
+    background: linear-gradient(45deg, rgba(108, 92, 231, 0.8), rgba(155, 89, 182, 0.8)), 
                 url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1500');
     background-size: cover;
     background-position: center;
-    height: 300px;
+    background-attachment: fixed;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--white);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: 50px;
     text-align: center;
 }
 
 .page-banner h1 {
     font-family: 'Kavivanar', cursive;
-    font-size: 3rem;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+    font-size: 3.5rem;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+    animation: fadeInUp 1s ease;
 }
 
-/* --- Content Container --- */
+/* --- Layout --- */
 .container {
     max-width: 1140px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* --- Cards & Sections (Unified) --- */
-.category-glass-card, .rich-info-card, .pdf-card {
-    background: var(--white);
+/* --- About Section --- */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+
+.about-text h2 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2.5rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.underline-left {
+    width: 80px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.about-image img {
+    width: 100%;
     border-radius: 30px;
     box-shadow: var(--shadow-rich);
-    border: 1px solid rgba(0,0,0,0.05);
-    overflow: hidden;
+    transform: perspective(1000px) rotateY(-5deg);
 }
 
-.category-glass-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 30px 60px rgba(108, 92, 231, 0.2);
-}
-
-/* --- Events & Files Grid --- */
-.files-main-grid, .event-info-grid {
+/* --- Grids (PDF, Files, Events) --- */
+.pdf-grid, .files-main-grid, .event-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-/* Icon Wrappers for Files */
-.category-icon-wrapper {
-    width: 100px;
-    height: 100px;
-    background: var(--gradient);
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    color: white;
-    font-size: 2.5rem;
+/* Cards Styles Unified */
+.pdf-card, .category-glass-card, .rich-info-card {
+    background: var(--white);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Buttons --- */
-.category-view-btn, .cta-button, .card-btn {
-    background: var(--secondary);
-    color: white;
-    padding: 12px 30px;
+.pdf-card:hover, .category-glass-card:hover, .rich-info-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(108, 92, 231, 0.2);
+}
+
+/* --- Intro Box --- */
+.intro-box {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-rich);
+    text-align: center;
+    position: relative;
+    border-top: 8px solid var(--primary);
+    margin: -80px auto 60px;
+    z-index: 10;
+    max-width: 900px;
+}
+
+/* --- Buttons --- */
+.card-btn, .cta-button, .category-view-btn {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 15px 35px;
     border-radius: 50px;
     text-decoration: none;
+    font-weight: 800;
     display: inline-block;
-    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.4);
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
-.category-view-btn:hover, .cta-button:hover {
-    background: var(--gradient);
-    transform: scale(1.05);
-}
-
-/* --- Contact & Hours Table --- */
+/* --- Contact & Hours Section --- */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -176,8 +217,8 @@ nav ul li a:hover, nav ul li a.active {
 
 .hours-table-container {
     background: var(--white);
-    padding: 30px;
-    border-radius: 25px;
+    padding: 40px;
+    border-radius: 30px;
     box-shadow: var(--shadow-rich);
     border-top: 8px solid var(--primary);
 }
@@ -189,7 +230,8 @@ nav ul li a:hover, nav ul li a.active {
 
 .hours-table td {
     padding: 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #f1f2f6;
+    color: var(--secondary);
 }
 
 .status-closed {
@@ -201,19 +243,42 @@ nav ul li a:hover, nav ul li a.active {
 footer {
     background: var(--secondary);
     color: var(--white);
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
     margin-top: 50px;
-    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
 }
 
-footer strong { color: var(--gold); }
+footer strong {
+    color: var(--gold);
+}
 
-/* --- Mobile Responsive --- */
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Mobile Responsive (Corrections majeures) --- */
 @media (max-width: 768px) {
-    .contact-grid, .about-section, .event-details {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-    }
+    header { padding: 15px 10px; }
+    nav { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 5px; }
+    nav ul li a { padding: 8px 12px; font-size: 0.9rem; }
+
     .page-banner h1 { font-size: 2.2rem; }
+    .page-banner { height: 250px; clip-path: none; }
+
+    .about-section, .event-details, .contact-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .intro-box { margin: -40px 15px 40px; padding: 30px 20px; }
+    
+    .pdf-grid, .files-main-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
 }
