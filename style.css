@@ -256,3 +256,122 @@ footer strong {
     .pdf-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
     .pdf-card img { height: 200px; }
 }
+
+/* --- Files Page Specific Modern Styling --- */
+
+/* முதன்மைத் தலைப்புப் பகுதி */
+.files-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.files-intro h2 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2.8rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+/* 3 பிரதான பெட்டிகளுக்கான கிரிட் அமைப்பு */
+.files-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+}
+
+/* நவீன கோப்பு அட்டை (File Card) */
+.file-category-card {
+    background: var(--white);
+    border-radius: 30px;
+    padding: 50px 30px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-rich);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* பின்னணியில் ஒரு மெல்லிய டிசைன் */
+.file-category-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(108, 92, 231, 0.05) 0%, transparent 70%);
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.file-category-card:hover::before {
+    transform: scale(1.2);
+    background: radial-gradient(circle, rgba(108, 92, 231, 0.1) 0%, transparent 70%);
+}
+
+.file-category-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+}
+
+/* ஐகான்கள் (Icons) */
+.file-icon {
+    font-size: 4rem;
+    margin-bottom: 25px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 5px 10px rgba(108, 92, 231, 0.2));
+}
+
+.file-category-card h3 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 1.8rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.file-category-card p {
+    font-size: 1rem;
+    color: #636e72;
+    margin-bottom: 30px;
+    max-width: 250px;
+}
+
+/* கோப்புகளுக்கான பொத்தான் */
+.file-btn {
+    padding: 12px 30px;
+    background: var(--secondary);
+    color: var(--white);
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.file-category-card:hover .file-btn {
+    background: var(--gradient);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
+
+/* அலைபேசி வடிவமைப்பு */
+@media (max-width: 768px) {
+    .files-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .file-category-card {
+        padding: 40px 20px;
+    }
+}
