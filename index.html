@@ -8,173 +8,185 @@
     <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-/* --- INDEX CSS COMPLET : Style Professionnel & Moderne --- */
 
-/* 1. Variables et Bases (Incluses pour l'autonomie de la page) */
+/* --- index.html : Ultra-Modern Style --- */
+
+/* Importation des Polices */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+
 :root {
-    --primary: #8e44ad;        /* Royal Purple */
-    --primary-light: #9b59b6;
-    --accent: #e67e22;         /* Deep Orange */
-    --secondary: #2c3e50;      /* Midnight Blue */
-    --gold: #f1c40f;           /* Golden Yellow */
-    --text-main: #2d3436;
+    --primary: #8e44ad;
+    --secondary: #2c3e50;
+    --accent: #e67e22;
+    --gold: #f1c40f;
     --white: #ffffff;
-    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
     --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* 2. Section Hero (Bannière d'accueil) */
+/* Base */
+body {
+    font-family: 'Baloo Thambi 2', cursive;
+    background: #f8f9fa;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Navigation Moderne */
+header {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'Kavivanar', cursive;
+    font-size: 1.8rem;
+    color: var(--gold);
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: var(--gradient);
+    box-shadow: 0 8px 15px rgba(108, 92, 231, 0.3);
+}
+
+/* Bannière d'Accueil */
 .page-banner {
-    background: linear-gradient(45deg, rgba(108, 92, 231, 0.8), rgba(155, 89, 182, 0.8)), 
+    background: linear-gradient(45deg, rgba(108, 92, 231, 0.7), rgba(44, 62, 80, 0.8)), 
                 url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1500');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    height: 450px; /* Plus grand pour l'accueil */
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--white);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    color: white;
     text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 .page-banner h1 {
     font-family: 'Kavivanar', cursive;
-    font-size: 4rem;
-    margin-bottom: 10px;
-    animation: fadeInUp 1s ease;
+    font-size: 3.5rem;
+    margin: 0;
 }
 
-/* 3. Boîte d'introduction (Intro Box) */
+/* Boîte d'Introduction (Le texte principal) */
 .intro-box {
-    background: var(--white);
-    padding: 50px;
+    background: white;
+    max-width: 900px;
+    margin: -80px auto 50px;
+    padding: 40px;
     border-radius: 30px;
     box-shadow: var(--shadow-rich);
     text-align: center;
     position: relative;
-    border-top: 8px solid var(--primary);
-    margin: -80px auto 60px; /* Chevauche la bannière */
     z-index: 10;
-    max-width: 900px;
+    border-top: 8px solid var(--primary);
 }
 
-.intro-box h2 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.2rem;
+.intro-box p {
+    font-size: 1.2rem;
     color: var(--secondary);
-    margin-bottom: 15px;
 }
 
-/* 4. Section À Propos (About Section) */
-.about-section {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin: 80px 0;
+/* Section Contact & Horaires (Bas de page) */
+.contact-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
-.about-text {
-    flex: 1;
-}
-
-.about-text h2 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.5rem;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
-}
-
-.underline-left {
-    width: 80px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-.about-image {
-    flex: 1;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 40px;
+.contact-card, .hours-card {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
     box-shadow: var(--shadow-rich);
-    transform: perspective(1000px) rotateY(-8deg);
-    transition: 0.5s ease;
 }
 
-.about-image img:hover {
-    transform: perspective(1000px) rotateY(0deg) scale(1.03);
+.contact-card h3, .hours-card h3 {
+    font-family: 'Kavivanar', cursive;
+    color: var(--primary);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
 }
 
-/* 5. Boutons d'Action (CTA) */
-.cta-button {
-    background: var(--gradient);
-    color: var(--white);
-    padding: 18px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 800;
-    display: inline-block;
-    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.4);
-    border: none;
-    margin-top: 20px;
+/* Table d'horaires */
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(108, 92, 231, 0.5);
+table td {
+    padding: 12px 5px;
+    border-bottom: 1px solid #f1f1f1;
 }
 
-/* 6. Animations */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+.status-closed {
+    color: #e74c3c;
+    font-weight: bold;
 }
 
-/* 7. Responsive Mobile */
+/* Footer */
+footer {
+    background: var(--secondary);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+/* Responsive Mobile */
 @media (max-width: 768px) {
+    nav { flex-direction: column; }
+    nav ul { padding: 0; margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+    .page-banner h1 { font-size: 2.2rem; }
     .page-banner { height: 300px; clip-path: none; }
-    .page-banner h1 { font-size: 2.5rem; }
-    
-    .intro-box { 
-        margin: -40px 15px 40px; 
-        padding: 30px 20px; 
-    }
-
-    .about-section {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .underline-left { margin: 0 auto 20px; }
-    
-    .about-image img {
-        transform: none; /* Désactive la 3D sur mobile */
-    }
-    .contact-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;
-}
-
-.hours-table-container {
-    background: white; padding: 40px; border-radius: 30px;
-    box-shadow: var(--shadow-rich); border-top: 8px solid var(--primary);
-}
-
-.hours-table { width: 100%; border-collapse: collapse; }
-
-.hours-table td { padding: 15px; border-bottom: 1px solid #eee; }
-
-.status-closed { color: #e74c3c; font-weight: bold; }
-
-.contact-map { border-radius: 30px; overflow: hidden; box-shadow: var(--shadow-rich); }
+    .contact-section { grid-template-columns: 1fr; }
 }
 </style>
 </head>
