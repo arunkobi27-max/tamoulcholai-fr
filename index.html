@@ -159,6 +159,22 @@
     .about-image img {
         transform: none; /* Désactive la 3D sur mobile */
     }
+    .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;
+}
+
+.hours-table-container {
+    background: white; padding: 40px; border-radius: 30px;
+    box-shadow: var(--shadow-rich); border-top: 8px solid var(--primary);
+}
+
+.hours-table { width: 100%; border-collapse: collapse; }
+
+.hours-table td { padding: 15px; border-bottom: 1px solid #eee; }
+
+.status-closed { color: #e74c3c; font-weight: bold; }
+
+.contact-map { border-radius: 30px; overflow: hidden; box-shadow: var(--shadow-rich); }
 }
 </style>
 </head>
