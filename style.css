@@ -520,3 +520,63 @@ footer strong {
         font-size: 1.8rem;
     }
 }
+
+/* PDF Grid Style */
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pdf-card {
+    text-decoration: none;
+    color: inherit;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.4s ease;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.pdf-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-color: var(--primary-color);
+}
+
+.pdf-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.pdf-info {
+    padding: 15px;
+}
+
+.pdf-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.pdf-info span {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* அலைபேசிக்கு ஏற்றவாறு */
+@media (max-width: 500px) {
+    .pdf-grid {
+        grid-template-columns: repeat(2, 1fr); /* மொபைலில் ஒரு வரிசைக்கு 2 படங்கள் */
+        gap: 15px;
+    }
+    .pdf-card img {
+        height: 200px;
+    }
+}
