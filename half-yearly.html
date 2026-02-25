@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>அரையாண்டுத் தேர்வு | தமிழ் சோலை</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">தமிழ் சோலை</div>
+            <ul>
+                <li><a href="index.html">முகப்பு</a></li>
+                <li><a href="about.html">எம்மைப்பற்றி</a></li>
+                <li><a href="activities.html">செயற்பாடுகள்</a></li>
+                <li><a href="events.html">நிகழ்வுகள்</a></li>
+                <li><a href="files.html" class="active">கோப்புகள்</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner" style="background: var(--secondary-color);">
+        <h1>அரையாண்டுத் தேர்வு வினாத்தாள்கள்</h1>
+        <p style="color: white;">ஆண்டு வாரியாகத் தொகுக்கப்பட்ட வினாத்தாள்கள்</p>
+    </div>
+
+    <main class="container">
+        
+        <section class="year-section">
+            <h2 class="section-title-left">கல்வியாண்டு 2024 - 2025</h2>
+            <div class="underline-left"></div>
+            
+            <div class="pdf-grid">
+                <script>
+                    // 12 நிலைகளுக்கும் தானாக அட்டைகளை உருவாக்க ஒரு சிறிய ஸ்கிரிப்ட்
+                    for (let i = 1; i <= 12; i++) {
+                        document.write(`
+                            <a href="pdfs/2024/grade${i}.pdf" target="_blank" class="pdf-card">
+                                <img src="https://via.placeholder.com/200x280?text=நிலை+${i}" alt="நிலை ${i}">
+                                <div class="pdf-info">
+                                    <h3>அரையாண்டுத் தேர்வு - நிலை ${i}</h3>
+                                    <span><i class="fas fa-download"></i> 2024 பதிவிறக்கு</span>
+                                </div>
+                            </a>
+                        `);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="year-section" style="margin-top: 50px;">
+            <h2 class="section-title-left">கல்வியாண்டு 2023 - 2024</h2>
+            <div class="underline-left"></div>
+            
+            <div class="pdf-grid">
+                <script>
+                    for (let i = 1; i <= 12; i++) {
+                        document.write(`
+                            <a href="pdfs/2023/grade${i}.pdf" target="_blank" class="pdf-card">
+                                <img src="https://via.placeholder.com/200x280?text=நிலை+${i}" alt="நிலை ${i}">
+                                <div class="pdf-info">
+                                    <h3>அரையாண்டுத் தேர்வு - நிலை ${i}</h3>
+                                    <span><i class="fas fa-download"></i> 2023 பதிவிறக்கு</span>
+                                </div>
+                            </a>
+                        `);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="files.html" class="card-btn"><i class="fas fa-arrow-left"></i> கோப்புகள் பக்கத்திற்குச் செல்ல</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
+    </footer>
+
+</body>
+</html>
