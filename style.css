@@ -50,11 +50,19 @@ nav {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     font-family: 'Kavivanar', cursive;
     font-size: 2rem;
-    color: #f1c40f;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    letter-spacing: 1px;
+    color: #f1c40f; /* தங்கம் போன்ற மஞ்சள் நிறம் */
+}
+
+.logo img {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: rotate(10deg) scale(1.1); /* லோகோ மீது மவுஸை வைக்கும்போது சிறிய அசைவு */
 }
 
 nav ul {
