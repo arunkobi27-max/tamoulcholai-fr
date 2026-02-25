@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>கட்டுரைகள் | தமிழ் சோலை</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">தமிழ் சோலை</div>
+            <ul>
+                <li><a href="index.html">முகப்பு</a></li>
+                <li><a href="about.html">எம்மைப்பற்றி</a></li>
+                <li><a href="activities.html">செயற்பாடுகள்</a></li>
+                <li><a href="events.html">நிகழ்வுகள்</a></li>
+                <li><a href="files.html" class="active">கோப்புகள்</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-banner" style="background: linear-gradient(rgba(211, 84, 0, 0.9), rgba(211, 84, 0, 0.9));">
+        <h1>கட்டுரைத் தொகுப்புகள்</h1>
+        <p style="color: white;">மொழித்திறன் வளர்க்கும் சிறந்த கட்டுரைகள்</p>
+    </div>
+
+    <main class="container">
+        
+        <section class="essay-section">
+            <h2 class="section-title-left">பொதுத்தலைப்பு</h2>
+            <div class="underline-left" style="background: #e67e22;"></div>
+            <p>சமூகம், பண்பாடு மற்றும் பொது அறிவு சார்ந்த கட்டுரைத் தலைப்புகள்:</p>
+            
+            <div class="pdf-grid">
+                <a href="pdfs/essays/general_1.pdf" target="_blank" class="pdf-card">
+                    <img src="https://via.placeholder.com/200x280/fef5e7/d35400?text=பொது+தலைப்பு" alt="கட்டுரை">
+                    <div class="pdf-info">
+                        <h3>தமிழர் பண்பாடு</h3>
+                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
+                    </div>
+                </a>
+                <a href="pdfs/essays/general_2.pdf" target="_blank" class="pdf-card">
+                    <img src="https://via.placeholder.com/200x280/fef5e7/d35400?text=பொது+தலைப்பு" alt="கட்டுரை">
+                    <div class="pdf-info">
+                        <h3>சுற்றுச்சூழல் பாதுகாப்பு</h3>
+                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="essay-section" style="margin-top: 50px;">
+            <h2 class="section-title-left">பாடநூல்த்தலைப்பு</h2>
+            <div class="underline-left" style="background: #e67e22;"></div>
+            <p>வளர் தமிழ் பாடநூல்களில் உள்ள பாடத்திட்டம் சார்ந்த கட்டுரைத் தலைப்புகள்:</p>
+            
+            <div class="pdf-grid">
+                <script>
+                    // 12 நிலைகளுக்கான பாடநூல் கட்டுரைகள்
+                    for (let i = 1; i <= 12; i++) {
+                        document.write(`
+                            <a href="pdfs/essays/textbook_grade${i}.pdf" target="_blank" class="pdf-card">
+                                <img src="https://via.placeholder.com/200x280/fef5e7/d35400?text=நிலை+${i}" alt="நிலை ${i}">
+                                <div class="pdf-info">
+                                    <h3>கட்டுரை - நிலை ${i}</h3>
+                                    <span><i class="fas fa-book"></i> பாடநூல் சார்ந்தது</span>
+                                </div>
+                            </a>
+                        `);
+                    }
+                </script>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="files.html" class="card-btn" style="background: #d35400;"><i class="fas fa-arrow-left"></i> கோப்புகள் பக்கத்திற்குச் செல்ல</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
+    </footer>
+
+</body>
+</html>
