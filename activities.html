@@ -7,6 +7,234 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="style.css"><style>
+/* --- ACTIVITIES PAGE CSS: Modern Timeline Style --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+
+:root {
+    --primary: #8e44ad;
+    --primary-light: #9b59b6;
+    --accent: #e67e22;
+    --secondary: #2c3e50;
+    --gold: #f1c40f;
+    --text-main: #2d3436;
+    --white: #ffffff;
+    --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Baloo Thambi 2', cursive;
+    background: #f8f9fa;
+    color: var(--text-main);
+    line-height: 1.8;
+}
+
+/* Header & Nav */
+header {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background: var(--gradient);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
+
+/* Banner */
+.page-banner {
+    background: linear-gradient(45deg, rgba(142, 68, 173, 0.8), rgba(108, 92, 231, 0.8)), 
+                url('https://images.unsplash.com/photo-1506784919141-93554972f770?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: 50px;
+}
+
+.page-banner h1 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 3.5rem;
+}
+
+/* Layout */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-bottom: 80px;
+    background: white;
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: var(--shadow-rich);
+}
+
+.about-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.section-title-left {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.underline-left {
+    width: 70px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Timeline Style - ஸ்பெஷல் டிசைன் */
+.timeline-item {
+    position: relative;
+    padding-left: 30px;
+    border-left: 4px solid #eee;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.timeline-item:hover {
+    border-left-color: var(--primary);
+}
+
+.timeline-item strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 4px solid var(--primary);
+    border-radius: 50%;
+}
+
+/* Image Style */
+.about-image {
+    flex: 0.7;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+    transition: 0.5s;
+}
+
+.about-image img:hover {
+    transform: translateY(-10px) rotate(2deg);
+}
+
+/* Goal List */
+.goal-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.goal-list li {
+    padding: 12px 0 12px 35px;
+    position: relative;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.goal-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+/* Divider */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
+    margin: 40px 0;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 80px 20px 40px;
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .about-section, .about-section.reverse {
+        flex-direction: column;
+        padding: 30px;
+    }
+    .about-image {
+        order: -1; /* மொபைலில் படம் முதலில் வரும் */
+        width: 100%;
+    }
+    .page-banner h1 {
+        font-size: 2.5rem;
+    }
+}
+</style>    
 </head>
 <body>
 
