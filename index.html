@@ -147,6 +147,35 @@ nav ul li a:hover, nav ul li a.active {
     margin: 40px auto;
     padding: 0 20px;
 }
+  /* Cartes d'infos (Adresse, Tel, Email) */
+.contact-info-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    grid-column: 1 / -1; /* Prend toute la largeur en haut */
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-rich);
+    border-bottom: 4px solid var(--primary);
+}
+
+.info-box i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.info-box p {
+    font-weight: 600;
+    color: var(--secondary);
+    margin: 0;
+}      
 
 .contact-card, .hours-card {
     background: var(--white);
