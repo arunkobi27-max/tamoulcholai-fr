@@ -7,6 +7,176 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"><style>
+        /* --- PDF GALLERY CSS: Ultra-Modern Card Style --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+
+:root {
+    --primary-green: #27ae60;
+    --dark-green: #1e8449;
+    --bg-light: #f4f7f6;
+    --text-dark: #2c3e50;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Baloo Thambi 2', cursive;
+    background-color: var(--bg-light);
+    margin: 0;
+}
+
+/* Header & Nav (Consistent with other pages) */
+header {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav ul { display: flex; list-style: none; gap: 15px; margin: 0; }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+nav ul li a:hover { background: var(--primary-green); }
+
+/* Banner */
+.page-banner {
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: 40px;
+}
+
+.page-banner h1 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-family: 'Kavivanar', cursive;
+    color: var(--dark-green);
+    font-size: 2rem;
+}
+
+.underline {
+    width: 80px;
+    height: 5px;
+    background: var(--primary-green);
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+/* PDF Grid Layout */
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+/* Individual Card Style */
+.pdf-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+}
+
+.pdf-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(39, 174, 96, 0.2);
+    border-color: var(--primary-green);
+}
+
+.pdf-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.pdf-card:hover img {
+    transform: scale(1.1);
+}
+
+.pdf-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.pdf-info h3 {
+    font-family: 'Kavivanar', cursive;
+    color: var(--text-dark);
+    margin: 0 0 15px 0;
+    font-size: 1.4rem;
+}
+
+.pdf-info span {
+    display: inline-block;
+    background: var(--primary-green);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.pdf-card:hover .pdf-info span {
+    background: var(--dark-green);
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer strong { color: #f1c40f; }
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .page-banner h1 { font-size: 2rem; }
+    .pdf-grid { grid-template-columns: 1fr; }
+}
+    </style>
 </head>
 <body>
 
