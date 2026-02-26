@@ -8,129 +8,200 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <style> 
-        /* --- Files Page: Ultra-Modern & Rich Style --- */
-        .files-wrapper {
-            padding: 80px 0;
-            background: radial-gradient(circle at top right, rgba(108, 92, 231, 0.05), transparent);
-        }
+    <link rel="stylesheet" href="style.css"><style> 
+        /* --- FILES PAGE CSS : Ultra-Modern Glassmorphism Style --- */
 
-        .files-header-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
 
-        .files-header-content h2 {
-            font-family: 'Kavivanar', cursive;
-            font-size: 3rem;
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-        }
+:root {
+    --primary: #8e44ad;
+    --primary-light: #a29bfe;
+    --secondary: #2c3e50;
+    --accent: #e67e22;
+    --gold: #f1c40f;
+    --white: #ffffff;
+    --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
+}
 
-        /* பிரதான கிரிட் அமைப்பு */
-        .files-main-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            perspective: 1000px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+body {
+    font-family: 'Baloo Thambi 2', cursive;
+    background: #f0f3f7; /* மென்மையான பின்னணி நிறம் */
+    color: var(--secondary);
+    line-height: 1.6;
+}
 
-        /* நவீன கண்ணாடி அட்டை (Category Card) */
-        .category-glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 40px;
-            padding: 60px 40px;
-            text-align: center;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* Header & Nav */
+header {
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
 
-        .category-glass-card:hover {
-            transform: translateY(-20px) scale(1.02);
-            box-shadow: 0 40px 80px rgba(108, 92, 231, 0.2);
-            background: #ffffff;
-        }
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-        /* ஐகான் வட்டம் */
-        .category-icon-wrapper {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            border-radius: 35% 65% 70% 30% / 30% 35% 65% 70%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
-            transition: 0.5s;
-        }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
 
-        .category-glass-card:hover .category-icon-wrapper {
-            border-radius: 50%;
-            transform: rotate(15deg);
-        }
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+}
 
-        .category-icon-wrapper i {
-            font-size: 3.5rem;
-            color: #ffffff;
-        }
+nav ul li a:hover, nav ul li a.active {
+    background: var(--gradient);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+}
 
-        .category-glass-card h3 {
-            font-family: 'Kavivanar', cursive;
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
+/* Page Banner */
+.page-banner {
+    background: linear-gradient(45deg, rgba(142, 68, 173, 0.85), rgba(44, 62, 80, 0.85)), 
+                url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    margin-bottom: 50px;
+}
 
-        .category-glass-card p {
-            font-size: 1.1rem;
-            color: #636e72;
-            margin-bottom: 35px;
-            line-height: 1.6;
-        }
+.page-banner h1 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 3rem;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
-        /* பொத்தான் */
-        .category-view-btn {
-            background: #2c3e50;
-            color: #ffffff;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
+/* Files Wrapper & Header */
+.files-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-        .category-glass-card:hover .category-view-btn {
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.4);
-            transform: scale(1.1);
-        }
+.files-header-content h2 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
 
-        @media (max-width: 768px) {
-            .files-main-grid {
-                grid-template-columns: 1fr;
-            }
-            .files-header-content h2 {
-                font-size: 2.2rem;
-            }
-        }
+.files-header-content p {
+    font-size: 1.2rem;
+    color: #636e72;
+    margin-bottom: 50px;
+}
+
+/* Main Grid */
+.files-main-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Glass Card Style */
+.category-glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px 30px;
+    border-radius: 35px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-glass-card:hover {
+    transform: translateY(-15px);
+    background: white;
+    box-shadow: 0 30px 60px rgba(142, 68, 173, 0.15);
+}
+
+.category-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 2.2rem;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+}
+
+.category-glass-card h3 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 1.8rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.category-glass-card p {
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-size: 1rem;
+}
+
+.category-view-btn {
+    padding: 12px 30px;
+    background: #f1f2f6;
+    border-radius: 50px;
+    font-weight: 700;
+    color: var(--primary);
+    transition: 0.3s;
+}
+
+.category-glass-card:hover .category-view-btn {
+    background: var(--primary);
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 80px 20px 40px;
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    margin-top: 80px;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-banner h1 { font-size: 2.2rem; }
+    .files-main-grid { grid-template-columns: 1fr; }
+}
     </style>
 </head>
 
