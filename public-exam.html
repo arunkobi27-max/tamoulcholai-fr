@@ -7,6 +7,206 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"><style>
+        /* --- PUBLIC EXAM PAGE CSS : Professional Emerald Style --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+
+:root {
+    --primary: #27ae60;      /* பச்சை நிறம் - வெற்றிக்கான அடையாளம் */
+    --primary-dark: #1e8449;
+    --secondary: #2c3e50;
+    --accent: #f1c40f;       /* தங்கம் - சிறப்பு */
+    --bg-light: #f9fbf9;
+    --white: #ffffff;
+    --shadow: 0 15px 35px rgba(39, 174, 96, 0.15);
+    --gradient: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+body {
+    font-family: 'Baloo Thambi 2', cursive;
+    background-color: var(--bg-light);
+    color: var(--secondary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    background: rgba(44, 62, 80, 0.98);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav ul { display: flex; list-style: none; gap: 15px; margin: 0; }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+nav ul li a:hover, nav ul li a.active { background: var(--primary); }
+
+/* Banner */
+.page-banner {
+    background: linear-gradient(rgba(39, 174, 96, 0.8), rgba(44, 62, 80, 0.85)), 
+                url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    background-position: center;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    margin-bottom: 50px;
+}
+
+.page-banner h1 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 3.5rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+.section-title-left {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+
+.underline-left {
+    width: 70px;
+    height: 5px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+/* PDF Grid */
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 35px;
+}
+
+/* PDF Card */
+.pdf-card {
+    background: var(--white);
+    border-radius: 25px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(39, 174, 96, 0.1);
+}
+
+.pdf-card:hover {
+    transform: translateY(-15px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary);
+}
+
+.pdf-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    background: #f0fdf4;
+}
+
+.pdf-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.pdf-info h3 {
+    font-size: 1.3rem;
+    color: var(--secondary);
+    margin: 0 0 15px 0;
+}
+
+.pdf-info span {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 8px 20px;
+    background: #f0fdf4;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.pdf-card:hover .pdf-info span {
+    background: var(--primary);
+    color: white !important;
+}
+
+/* Action Button */
+.card-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 20px rgba(39, 174, 96, 0.2);
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(39, 174, 96, 0.3);
+}
+
+/* Divider */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(39, 174, 96, 0.2), transparent);
+    margin: 60px 0;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary);
+    color: white;
+    padding: 80px 20px 40px;
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+footer strong { color: var(--accent); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pdf-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .page-banner h1 { font-size: 2.2rem; }
+    .pdf-info { padding: 15px; }
+    .pdf-info h3 { font-size: 1.1rem; }
+}
+   </style>     
 </head>
 <body>
 
