@@ -7,40 +7,47 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
+    <link rel="stylesheet" href="style.css"> <style>
+       /* --- INDEX CSS : Ultra-Modern & Rich Professional Style --- */
 
-/* --- index.html : Ultra-Modern Style --- */
-
-/* Importation des Polices */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
 
 :root {
-    --primary: #8e44ad;
-    --secondary: #2c3e50;
-    --accent: #e67e22;
-    --gold: #f1c40f;
+    --primary: #8e44ad;        /* Violet Royal */
+    --primary-light: #9b59b6;
+    --accent: #e67e22;         /* Orange profond */
+    --secondary: #2c3e50;      /* Bleu Minuit */
+    --gold: #f1c40f;           /* Jaune Or */
+    --text-main: #2d3436;
     --white: #ffffff;
     --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
     --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
 body {
     font-family: 'Baloo Thambi 2', cursive;
     background: #f8f9fa;
-    margin: 0;
-    line-height: 1.6;
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.7;
 }
 
-/* Navigation Moderne */
+/* --- Navigation --- */
 header {
     background: rgba(44, 62, 80, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 12px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -55,40 +62,41 @@ nav {
 .logo {
     display: flex;
     align-items: center;
-    text-decoration: none;
     font-family: 'Kavivanar', cursive;
     font-size: 1.8rem;
     color: var(--gold);
+    text-decoration: none;
 }
 
 .logo img {
-    height: 50px;
+    height: 55px;
     margin-right: 15px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 15px;
+    gap: 10px;
 }
 
 nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 10px;
     font-weight: 600;
-    transition: 0.3s;
+    padding: 10px 20px;
+    border-radius: 12px;
 }
 
 nav ul li a:hover, nav ul li a.active {
     background: var(--gradient);
-    box-shadow: 0 8px 15px rgba(108, 92, 231, 0.3);
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+    transform: translateY(-2px);
+    color: white;
 }
 
-/* Bannière d'Accueil */
+/* --- Hero Banner --- */
 .page-banner {
-    background: linear-gradient(45deg, rgba(108, 92, 231, 0.7), rgba(44, 62, 80, 0.8)), 
+    background: linear-gradient(45deg, rgba(108, 92, 231, 0.75), rgba(44, 62, 80, 0.85)), 
                 url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1500');
     background-size: cover;
     background-position: center;
@@ -97,108 +105,93 @@ nav ul li a:hover, nav ul li a.active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    text-align: center;
+    color: var(--white);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    text-align: center;
 }
 
 .page-banner h1 {
     font-family: 'Kavivanar', cursive;
     font-size: 3.5rem;
-    margin: 0;
+    margin-bottom: 10px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* --- SECTION CONTACT & HORAIRES --- */
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-top: 40px;
+/* --- Intro Box (Effet de chevauchement) --- */
+.intro-box {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 35px;
+    box-shadow: var(--shadow-rich);
+    text-align: center;
+    max-width: 1000px;
+    margin: -80px auto 60px;
+    position: relative;
+    z-index: 10;
+    border-top: 8px solid var(--primary);
 }
 
-/* Cartes d'infos (Adresse, Tel, Email) */
-.contact-info-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    grid-column: 1 / -1; /* Prend toute la largeur en haut */
+.intro-box h2 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2.2rem;
+    color: var(--primary);
     margin-bottom: 20px;
 }
 
-.info-box {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: var(--shadow-rich);
-    border-bottom: 4px solid var(--primary);
+/* --- Grid de Contact & Horaires --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-.info-box i {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
-
-.info-box p {
-    font-weight: 600;
-    color: var(--secondary);
-    margin: 0;
-}
-
-/* Tableau des Horaires */
-.hours-card {
-    background: white;
+.contact-card, .hours-card {
+    background: var(--white);
     padding: 40px;
     border-radius: 30px;
     box-shadow: var(--shadow-rich);
 }
 
-.hours-card h3 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 1.8rem;
-    color: var(--primary);
-    text-align: center;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #f1f1f1;
-    padding-bottom: 10px;
-}
-
 .hours-table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 15px;
 }
 
 .hours-table td {
     padding: 15px 10px;
-    border-bottom: 1px solid #f8f9fa;
+    border-bottom: 1px solid #f1f2f6;
     color: var(--secondary);
-    font-size: 1.1rem;
 }
 
-.day-column {
-    font-weight: 600;
+.status-closed { color: #e74c3c; font-weight: bold; }
+.status-open { color: #27ae60; font-weight: bold; }
+
+/* --- Footer --- */
+footer {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    margin-top: 50px;
 }
 
-.status-closed {
-    color: #e74c3c; /* Rouge pour "Fermé" */
-    font-weight: 800;
-}
+footer strong { color: var(--gold); }
 
-.status-open {
-    color: #27ae60; /* Vert pour les heures */
-    font-weight: 800;
-}
-
-/* Responsive */
+/* --- Mobile Responsive --- */
 @media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
+    .page-banner { height: 300px; clip-path: none; }
+    .page-banner h1 { font-size: 2.2rem; }
+    .intro-box { margin: -40px 15px 40px; padding: 30px 20px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    nav { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; }
 }
-}
-</style>
+    </style>
 </head>
 <body>
 
