@@ -71,3 +71,107 @@ footer {
     margin-top: 50px;
 }
 footer strong { color: var(--gold); }
+
+/* --- MOBILE OPTIMIZED STYLES (Responsive) --- */
+
+@media (max-width: 768px) {
+    
+    /* 1. நேர்த்தியான நேவிகேஷன் (Header) */
+    nav {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        gap: 5px;
+        flex-wrap: wrap; /* பட்டன்கள் பல வரிகளில் வரும் */
+        justify-content: center;
+    }
+
+    nav ul li a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* 2. பேனர் (Banner) */
+    .page-banner {
+        height: 200px;
+        padding: 40px 15px;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .page-banner h1 {
+        font-size: 1.8rem; /* எழுத்து அளவு குறைப்பு */
+    }
+
+    /* 3. கிரிட் அமைப்பு (Grid - 1 வரிசையாக மாற்றுதல்) */
+    .pdf-grid, .files-main-grid, .event-info-grid {
+        grid-template-columns: 1fr !important; /* ஒரு வரிசையில் ஒன்று மட்டும் வரும் */
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    /* 4. கார்டுகள் (Cards - தொடுவதற்கு எளிதாக) */
+    .pdf-card, .category-glass-card {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 400px; /* அகலம் கட்டுப்படுத்தப்படும் */
+        border-radius: 20px;
+    }
+
+    .pdf-info h3 {
+        font-size: 1.1rem;
+    }
+
+    /* 5. பட்டன்கள் (Touch-Friendly Buttons) */
+    .pdf-info span, .card-btn, .cta-button {
+        width: 100%; /* பட்டன் முழு அகலத்திற்கு வரும் */
+        box-sizing: border-box;
+        padding: 15px;
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+    }
+
+    /* 6. படங்கள் (Images) */
+    .about-image img, .pdf-card img {
+        height: auto;
+        min-height: 180px;
+    }
+
+    /* 7. உள்ளடக்கம் (Spacing) */
+    .container, .files-wrapper {
+        padding: 20px 15px;
+    }
+
+    .section-title-left {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .underline-left {
+        margin: 0 auto 25px; /* நடுவில் கொண்டு வரப்பட்டது */
+    }
+
+    /* 8. அடிக்குறிப்பு (Footer) */
+    footer {
+        padding: 50px 20px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 9. மிகச்சிறிய போன்களுக்கு (Small Phones) */
+@media (max-width: 480px) {
+    .page-banner h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo a {
+        font-size: 1.2rem;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+}
