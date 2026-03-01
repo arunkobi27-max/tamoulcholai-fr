@@ -151,8 +151,16 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .pdf-info span {
+    display: inline-block;
     background: linear-gradient(135deg, #1abc9c, #16a085); /* Teal Gradient */
+    padding: 10px 20px;
     /* அல்லது முந்தைய நீல நிறமே இருக்கட்டும் என்றால் இதைத் தவிர்க்கவும் */
+    background: var(--gradient);
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
 .pdf-card:hover .pdf-info span {
