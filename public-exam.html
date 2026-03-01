@@ -3,221 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>பொதுத் தேர்வு | தமிழ் சோலை</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet">
+    <title>பொதுத்தேர்வு | தமிழ் சோலை</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"><style>
-        /* --- PUBLIC EXAM PAGE CSS : Professional Emerald Style --- */
+    
+    <style>
+        /* --- PUBLIC EXAM PAGE CSS : Rich Modern Style --- */
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+        :root {
+            --primary: #27ae60;      /* பச்சை நிறம் - வெற்றிக்கான அடையாளம் */
+            --primary-dark: #1e8449;
+            --secondary: #2c3e50;
+            --accent: #f1c40f;       /* தங்கம் - சிறப்பு */
+            --white: #ffffff;
+            --bg-light: #f4f7f6;
+            --gradient: linear-gradient(135deg, #2ecc71, #27ae60);
+            --shadow-rich: 0 15px 35px rgba(39, 174, 96, 0.15);
+        }
 
-:root {
-    --primary: #27ae60;      /* பச்சை நிறம் - வெற்றிக்கான அடையாளம் */
-    --primary-dark: #1e8449;
-    --secondary: #2c3e50;
-    --accent: #f1c40f;       /* தங்கம் - சிறப்பு */
-    --bg-light: #f9fbf9;
-    --white: #ffffff;
-    --shadow: 0 15px 35px rgba(39, 174, 96, 0.15);
-    --gradient: linear-gradient(135deg, #2ecc71, #27ae60);
-}
+        body {
+            font-family: 'Baloo Thambi 2', cursive;
+            background-color: var(--bg-light);
+            color: var(--secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
 
-body {
-    font-family: 'Baloo Thambi 2', cursive;
-    background-color: var(--bg-light);
-    color: var(--secondary);
-    margin: 0;
-    line-height: 1.6;
-}
+        /* Header & Nav */
+        header {
+            background: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
 
-/* Header & Nav */
-header {
-    background: rgba(44, 62, 80, 0.98);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 12px 0;
-}
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+        nav ul { display: flex; list-style: none; gap: 15px; margin: 0; }
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover, nav ul li a.active { background: var(--primary); }
 
-nav ul { display: flex; list-style: none; gap: 15px; margin: 0; }
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-nav ul li a:hover, nav ul li a.active { background: var(--primary); }
+        /* Banner */
+        .page-banner {
+            background: linear-gradient(rgba(39, 174, 96, 0.8), rgba(44, 62, 80, 0.85)), 
+                        url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+            margin-bottom: 50px;
+        }
 
-/* Banner */
-.page-banner {
-    background: linear-gradient(rgba(39, 174, 96, 0.8), rgba(44, 62, 80, 0.85)), 
-                url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1500');
-    background-size: cover;
-    background-position: center;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-    margin-bottom: 50px;
-}
+        .page-banner h1 {
+            font-family: 'Kavivanar', cursive;
+            font-size: 3.5rem;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin: 0;
+        }
 
-.page-banner h1 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 3.5rem;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
 
-/* Container */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 80px;
-}
+        .section-title-left {
+            font-family: 'Kavivanar', cursive;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
 
-.section-title-left {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.2rem;
-    color: var(--primary-dark);
-    margin-bottom: 10px;
-}
+        .underline-left {
+            width: 70px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
 
-.underline-left {
-    width: 70px;
-    height: 5px;
-    border-radius: 10px;
-    margin-bottom: 40px;
-}
+        /* PDF Grid */
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 35px;
+        }
 
-/* PDF Grid */
-.pdf-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 35px;
-}
+        /* PDF Card */
+        .pdf-card {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(39, 174, 96, 0.1);
+        }
 
-/* PDF Card */
-.pdf-card {
-    background: var(--white);
-    border-radius: 25px;
-    overflow: hidden;
-    text-decoration: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(39, 174, 96, 0.1);
-}
+        .pdf-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-rich);
+            border-color: var(--primary);
+        }
 
-.pdf-card:hover {
-    transform: translateY(-15px);
-    box-shadow: var(--shadow);
-    border-color: var(--primary);
-}
+        .pdf-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #f0fdf4; /* மென்மையான பச்சை பின்னணி */
+        }
 
-.pdf-card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    background: #f0fdf4;
-}
+        .pdf-info {
+            padding: 25px;
+            text-align: center;
+            flex-grow: 1;
+        }
 
-.pdf-info {
-    padding: 25px;
-    text-align: center;
-}
+        .pdf-info h3 {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin: 0 0 15px 0;
+        }
 
-.pdf-info h3 {
-    font-size: 1.3rem;
-    color: var(--secondary);
-    margin: 0 0 15px 0;
-}
+        .pdf-info span {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 10px 25px;
+            background: #f0fdf4;
+            color: var(--primary);
+            border-radius: 50px;
+            transition: 0.3s;
+        }
 
-.pdf-info span {
-    display: inline-block;
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 8px 20px;
-    background: #f0fdf4;
-    border-radius: 50px;
-    transition: 0.3s;
-}
+        .pdf-card:hover .pdf-info span {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.2);
+        }
 
-.pdf-card:hover .pdf-info span {
-    background: var(--primary);
-    color: white !important;
-}
+        /* Divider */
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(39, 174, 96, 0.2), transparent);
+            margin: 60px 0;
+        }
 
-/* Action Button */
-.card-btn {
-    display: inline-block;
-    padding: 16px 40px;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    box-shadow: 0 10px 20px rgba(39, 174, 96, 0.2);
-    transition: 0.3s;
-}
+        /* Action Button */
+        .card-btn-container {
+            text-align: center;
+            margin-top: 60px;
+        }
 
-.card-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(39, 174, 96, 0.3);
-}
+        .card-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
 
-/* Divider */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(39, 174, 96, 0.2), transparent);
-    margin: 60px 0;
-}
+        .card-btn:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.3);
+        }
 
-/* Footer */
-footer {
-    background: var(--secondary);
-    color: white;
-    padding: 80px 20px 40px;
-    text-align: center;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-}
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 20px 40px;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            margin-top: 50px;
+        }
 
-footer strong { color: var(--accent); }
+        footer strong { color: var(--accent); }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .pdf-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    .page-banner h1 { font-size: 2.2rem; }
-    .pdf-info { padding: 15px; }
-    .pdf-info h3 { font-size: 1.1rem; }
-}
-   </style>     
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pdf-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .page-banner h1 { font-size: 2.5rem; }
+            .pdf-info { padding: 15px; }
+            .pdf-info h3 { font-size: 1.1rem; }
+            .underline-left { margin-bottom: 25px; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
-           <div class="logo">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-        <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Tamilcholai Logo" style="height: 50px; width: auto; margin-right: 15px;">
-        தமிழ்ச்சோலை
-    </a>
-</div>
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                    <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Tamilcholai Logo" style="height: 50px; width: auto; margin-right: 15px;">
+                     தமிழுச்சோலை
+                </a>
+            </div>
             <ul>
                 <li><a href="index.html">முகப்பு</a></li>
                 <li><a href="about.html">எம்மைப்பற்றி</a></li>
@@ -228,64 +242,127 @@ footer strong { color: var(--accent); }
         </nav>
     </header>
 
-    <div class="page-banner"
+    <div class="page-banner">
         <h1>பொதுத்தேர்வு</h1>
     </div>
 
     <main class="container">
-        
         <section class="year-section">
-            <h2 class="section-title-left">பொதுத் தேர்வு - 2024</h2>
-            <div class="underline-left" style="background: #27ae60;"></div>
+            <h2 class="section-title-left">கல்வியாண்டு 2024 - 2025</h2>
+            <div class="underline-left"></div>
             
             <div class="pdf-grid">
-                <script>
-                    // பொதுத் தேர்வு 12 நிலைகளுக்கும் பெட்டிகளை உருவாக்குதல்
-                    for (let i = 1; i <= 12; i++) {
-                        document.write(`
-                            <a href="pdfs/public/2024/grade${i}.pdf" target="_blank" class="pdf-card" style="border-bottom: 4px solid #27ae60;">
-                                <img src="https://via.placeholder.com/200x280/eafaf1/27ae60?text=நிலை+${i}" alt="பொதுத் தேர்வு நிலை ${i}">
-                                <div class="pdf-info">
-                                    <h3>பொதுத் தேர்வு - நிலை ${i}</h3>
-                                    <span style="color: #27ae60;"><i class="fas fa-file-pdf"></i> 2024 வினாத்தாள்</span>
-                                </div>
-                            </a>
-                        `);
-                    }
-                </script>
-            </div>
+    
+    <a href="pdfs/public/1-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 1</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/2-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 2">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 2</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/3-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 3</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/4-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 4</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/5-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 5</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a> 
+
+    <a href="pdfs/public/6-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 6</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/7-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 2">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 7</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/8-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 8</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/9-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 9</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/10-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 10</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/11-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 11</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>
+
+    <a href="pdfs/public/12-2025.pdf" target="_blank" class="pdf-card">
+        <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="வளர் தமிழ் 1">
+        <div class="pdf-info">
+            <h3>வளர் தமிழ் 12</h3>
+            <span><i class="fas fa-eye"></i> PDF பார்</span>
+        </div>
+    </a>            
+
+    </div> 
         </section>
 
         <hr class="section-divider">
 
-        <section class="year-section" style="margin-top: 50px;">
-            <h2 class="section-title-left">பொதுத் தேர்வு - 2023</h2>
-            <div class="underline-left" style="background: #27ae60;"></div>
-            
-            <div class="pdf-grid">
-                <script>
-                    for (let i = 1; i <= 12; i++) {
-                        document.write(`
-                            <a href="pdfs/public/2023/grade${i}.pdf" target="_blank" class="pdf-card" style="border-bottom: 4px solid #27ae60;">
-                                <img src="https://via.placeholder.com/200x280/eafaf1/27ae60?text=நிலை+${i}" alt="பொதுத் தேர்வு நிலை ${i}">
-                                <div class="pdf-info">
-                                    <h3>பொதுத் தேர்வு - நிலை ${i}</h3>
-                                    <span style="color: #27ae60;"><i class="fas fa-file-pdf"></i> 2023 வினாத்தாள்</span>
-                                </div>
-                            </a>
-                        `);
-                    }
-                </script>
-            </div>
-        </section>
-
-        <div style="text-align: center; margin-top: 50px;">
-            <a href="files.html" class="card-btn" style="background: #27ae60;"><i class="fas fa-arrow-left"></i> கோப்புகள் பக்கத்திற்குச் செல்ல</a>
+        <div class="card-btn-container">
+            <a href="files.html" class="card-btn">
+                <i class="fas fa-arrow-left"></i> கோப்புகள் பக்கத்திற்குச் செல்ல
+            </a>
         </div>
     </main>
-
+    
     <footer>
-        <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
+        <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | நம் வாழ்வும் வளமும் தமிழ்மொழி என்போம்</p>
     </footer>
 
 </body>
