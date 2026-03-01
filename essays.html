@@ -7,6 +7,130 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"><style>
+    /* --- ESSAY PAGE CSS : Warm & Academic Style --- */
+
+:root {
+    --essay-primary: #e67e22;      /* ஆரஞ்சு - படைப்பாற்றல் */
+    --essay-dark: #d35400;
+    --essay-bg: #fdfaf6;          /* லேசான காகித நிறம் */
+    --essay-shadow: 0 10px 30px rgba(211, 84, 0, 0.1);
+}
+
+/* பேனர் ஸ்டைல் */
+.page-banner {
+    background: linear-gradient(rgba(211, 84, 0, 0.7), rgba(44, 62, 80, 0.85)), 
+                url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1500');
+    background-size: cover;
+    background-position: center;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+.page-banner h1 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 3.5rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* கட்டுரை கார்டுகள் (Essay Cards) */
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 20px 0;
+}
+
+.pdf-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    border-bottom: 5px solid var(--essay-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--essay-shadow);
+    border-bottom: 5px solid var(--essay-dark);
+}
+
+.pdf-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: sepia(20%); /* பழைய காகித உணர்வு கொடுக்க */
+}
+
+.pdf-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.pdf-info h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-family: 'Baloo Thambi 2', cursive;
+}
+
+.pdf-info span {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--essay-primary);
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.pdf-card:hover .pdf-info span {
+    background: var(--essay-dark);
+    letter-spacing: 1px;
+}
+
+/* பிரிவு தலைப்புகள் */
+.section-title-left {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2.2rem;
+    color: var(--essay-dark);
+}
+
+.essay-section p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* மொபைல் வடிவம் */
+@media (max-width: 768px) {
+    .pdf-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .page-banner h1 {
+        font-size: 2.2rem;
+    }
+
+    .pdf-info {
+        padding: 15px;
+    }
+
+    .pdf-info h3 {
+        font-size: 1rem;
+    }
+}
+</style>
 </head>
 <body>
 
