@@ -1,28 +1,41 @@
-/* --- GLOBAL VARIABLES : சீரான நிறங்கள் மற்றும் வடிவமைப்பு --- */
+/* --- 1. இறக்குமதி மற்றும் மாறிகள் (Import & Variables) --- */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+
 :root {
-    --primary-blue: #2980b9;      /* அரையாண்டுத் தேர்வுக்கான நீலம் */
-    --primary-green: #27ae60;     /* பொதுத்தேர்வுக்கான பச்சை */
-    --primary-orange: #e67e22;    /* கட்டுரைகளுக்கான ஆரஞ்சு */
-    --dark-text: #2c3e50;
-    --light-bg: #f4f7f6;
-    --white: #ffffff;
+    /* முதன்மை நிறங்கள் (Purple Theme) */
+    --primary: #8e44ad;
+    --primary-light: #9b59b6;
+    --secondary: #2c3e50;
+    --accent: #e67e22;
     --gold: #f1c40f;
-    --shadow: 0 10px 30px rgba(0,0,0,0.1);
-    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --white: #ffffff;
+    --bg-light: #f8f9fa;
+    --text-main: #2d3436;
+    
+    /* துணைப் பக்கங்களுக்கான நிறங்கள் (Dynamic Colors) */
+    --half-yearly: #2980b9; /* Blue */
+    --public-exam: #27ae60; /* Green */
+    --essays: #d35400;      /* Dark Orange */
+    
+    /* இதர அமைப்புகள் */
+    --shadow-rich: 0 15px 35px rgba(0,0,0,0.1);
+    --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* --- RESET & BASIC STYLES --- */
+/* --- 2. அடிப்படை அமைப்புகள் (Reset & Base) --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: var(--transition);
 }
 
 body {
     font-family: 'Baloo Thambi 2', cursive;
-    background-color: var(--light-bg);
-    color: var(--dark-text);
-    line-height: 1.6;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.7;
 }
 
 .container {
@@ -31,14 +44,14 @@ body {
     padding: 0 20px;
 }
 
-/* --- COMMON NAVIGATION --- */
+/* --- 3. நேவிகேஷன் (Header & Navigation) --- */
 header {
     background: rgba(44, 62, 80, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 12px 0;
+    padding: 15px 0;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
@@ -48,38 +61,54 @@ nav {
     align-items: center;
 }
 
-nav ul { display: flex; list-style: none; gap: 15px; }
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--gold);
+    font-family: 'Kavivanar', cursive;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
 nav ul li a {
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
     padding: 10px 18px;
-    border-radius: 10px;
-    transition: 0.3s;
+    border-radius: 12px;
 }
 
 nav ul li a:hover, nav ul li a.active {
-    background: var(--primary-blue); /* Default hover color */
+    background: var(--gradient);
+    color: white;
 }
 
-/* --- COMMON BANNER --- */
+/* --- 4. பேனர் (Banner) --- */
 .page-banner {
-    height: 250px;
+    background: var(--secondary);
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--white);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    margin-bottom: 50px;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .page-banner h1 {
     font-family: 'Kavivanar', cursive;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* --- COMMON GRID & PDF CARDS --- */
+/* --- 5. கிரிட் மற்றும் கார்டுகள் (Grid & Cards) --- */
 .pdf-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -92,8 +121,7 @@ nav ul li a:hover, nav ul li a.active {
     border-radius: 25px;
     overflow: hidden;
     text-decoration: none;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+    box-shadow: var(--shadow-rich);
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0,0,0,0.05);
@@ -101,12 +129,12 @@ nav ul li a:hover, nav ul li a.active {
 
 .pdf-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
 .pdf-card img {
     width: 100%;
-    height: 170px;
+    height: 180px;
     object-fit: cover;
     border-bottom: 4px solid var(--gold);
 }
@@ -117,39 +145,84 @@ nav ul li a:hover, nav ul li a.active {
 }
 
 .pdf-info h3 {
-    font-size: 1.2rem;
-    color: var(--dark-text);
+    font-size: 1.3rem;
+    color: var(--secondary);
     margin-bottom: 15px;
 }
 
+/* PDF பொத்தான் (Button Inside Card) */
 .pdf-info span {
     display: inline-block;
     padding: 10px 25px;
-    background: #eee;
-    color: #333;
+    background: var(--primary);
+    color: white;
     border-radius: 50px;
     font-weight: 700;
-    transition: 0.3s;
+    font-size: 0.9rem;
 }
 
-/* --- BUTTONS & FOOTER --- */
+/* --- 6. துணைப் பக்கங்களின் பிரத்யேக நிறங்கள் (Page Modifiers) --- */
+/* Half Yearly Side */
+.half-yearly-page .pdf-info span { background: var(--half-yearly); }
+.half-yearly-page .page-banner { background: linear-gradient(rgba(41,128,185,0.8), rgba(44,62,80,0.9)); }
+
+/* Public Exam Side */
+.public-exam-page .pdf-info span { background: var(--public-exam); }
+.public-exam-page .page-banner { background: linear-gradient(rgba(39,174,96,0.8), rgba(44,62,80,0.9)); }
+
+/* Essay Side */
+.essay-page .pdf-info span { background: var(--essays); }
+.essay-page .page-banner { background: linear-gradient(rgba(211,84,0,0.8), rgba(44,62,80,0.9)); }
+
+/* --- 7. பொதுவான பட்டன்கள் மற்றும் டிவைடர் (Utilities) --- */
+.section-title-left {
+    font-family: 'Kavivanar', cursive;
+    font-size: 2.2rem;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.underline-left {
+    width: 80px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
 .card-btn {
     display: inline-block;
     padding: 15px 35px;
-    background: var(--dark-text);
-    color: var(--white);
+    background: var(--secondary);
+    color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 700;
-    transition: 0.3s;
 }
 
 .card-btn:hover {
-    transform: scale(1.05);
+    background: var(--accent);
 }
 
+/* --- 8. மொபைல் ரெஸ்பான்சிவ் (Responsive Design) --- */
+@media (max-width: 768px) {
+    nav { flex-direction: column; padding: 10px; }
+    nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+    
+    .page-banner { height: 220px; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+    .page-banner h1 { font-size: 2rem; }
+    
+    .pdf-grid { grid-template-columns: 1fr; gap: 20px; }
+    
+    .section-title-left { font-size: 1.7rem; text-align: center; }
+    .underline-left { margin: 0 auto 30px; }
+    
+    .pdf-info span, .card-btn { width: 100%; text-align: center; }
+}
+
+/* --- 9. அடிக்குறிப்பு (Footer) --- */
 footer {
-    background: var(--dark-text);
+    background: var(--secondary);
     color: var(--white);
     padding: 60px 20px;
     text-align: center;
@@ -157,9 +230,4 @@ footer {
     margin-top: 50px;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    .pdf-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-    .page-banner h1 { font-size: 2rem; }
-    nav ul { display: none; } /* Mobile menu logic added separately if needed */
-}
+footer strong { color: var(--gold); }
