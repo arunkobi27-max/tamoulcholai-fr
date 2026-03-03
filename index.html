@@ -233,6 +233,12 @@ footer strong { color: var(--gold); }
         தமிழ்ச்சோலை
     </a>
 </div>
+
+         <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" id="fileSearch" placeholder="Rechercher un fichier (ex: Grade 5)..." onkeyup="filterFiles()">
+        </div> 
+                
                 <ul>
                     <li><a href="index.html" class="active">முகப்பு</a></li>
                     <li><a href="about.html">எம்மைப்பற்றி</a></li>
@@ -313,6 +319,20 @@ footer strong { color: var(--gold); }
     <footer>
         <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
     </footer>
+        <script>
+function filterFiles() {
+    let input = document.getElementById('fileSearch').value.toLowerCase();
+    let cards = document.getElementsByClassName('pdf-card');
 
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        if (title.includes(input)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
