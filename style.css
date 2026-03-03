@@ -219,6 +219,71 @@ nav ul li a:hover, nav ul li a.active {
     
     .pdf-info span, .card-btn { width: 100%; text-align: center; }
 }
+/* --- HEADER SOUS-PAGE AVEC RECHERCHE --- */
+.subpage-header {
+    background: #ffffff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border-bottom: 3px solid var(--primary-color, #8e44ad);
+}
+
+.subpage-header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+/* Style de la barre de recherche */
+.search-container {
+    flex-grow: 1;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #95a5a6;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border-radius: 50px;
+    border: 2px solid #f1f2f6;
+    background: #f8f9fa;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+}
+
+.search-container input:focus {
+    border-color: var(--primary-color, #8e44ad);
+    background: #fff;
+    box-shadow: 0 0 10px rgba(142, 68, 173, 0.1);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .subpage-header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .search-container {
+        width: 100%;
+        order: 3; /* La recherche passe en bas sur mobile */
+    }
+    .logo span { display: none; }
+}
 
 /* --- 9. அடிக்குறிப்பு (Footer) --- */
 footer {
