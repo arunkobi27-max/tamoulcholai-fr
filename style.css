@@ -1,177 +1,165 @@
-/* --- BASE COMMUNE : À mettre dans style.css --- */
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
-
+/* --- GLOBAL VARIABLES : சீரான நிறங்கள் மற்றும் வடிவமைப்பு --- */
 :root {
-    --primary: #8e44ad;
-    --primary-light: #9b59b6;
-    --accent: #e67e22;
-    --secondary: #2c3e50;
-    --gold: #f1c40f;
-    --text-main: #2d3436;
+    --primary-blue: #2980b9;      /* அரையாண்டுத் தேர்வுக்கான நீலம் */
+    --primary-green: #27ae60;     /* பொதுத்தேர்வுக்கான பச்சை */
+    --primary-orange: #e67e22;    /* கட்டுரைகளுக்கான ஆரஞ்சு */
+    --dark-text: #2c3e50;
+    --light-bg: #f4f7f6;
     --white: #ffffff;
-    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
-    --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    --gold: #f1c40f;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.3s ease; }
+/* --- RESET & BASIC STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Baloo Thambi 2', cursive;
-    background: #f8f9fa;
-    color: var(--text-main);
-    line-height: 1.7;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
 }
 
-/* Header & Nav */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- COMMON NAVIGATION --- */
 header {
     background: rgba(44, 62, 80, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
-    top: 0; z-index: 1000; padding: 15px 0;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 nav {
-    max-width: 1200px; margin: 0 auto;
-    display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo {
-    display: flex; align-items: center;
-    font-family: 'Kavivanar', cursive; font-size: 2rem; color: var(--gold);
-    text-decoration: none;
-}
-
-nav ul { display: flex; list-style: none; gap: 10px; }
-
+nav ul { display: flex; list-style: none; gap: 15px; }
 nav ul li a {
-    color: var(--white); text-decoration: none; font-weight: 600;
-    padding: 10px 20px; border-radius: 12px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
 nav ul li a:hover, nav ul li a.active {
-    background: var(--gradient); color: white;
+    background: var(--primary-blue); /* Default hover color */
 }
 
-/* Banner Générale */
+/* --- COMMON BANNER --- */
 .page-banner {
-    background: var(--secondary);
-    height: 350px; display: flex; flex-direction: column;
-    justify-content: center; align-items: center; color: var(--white);
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    margin-bottom: 50px;
     text-align: center;
 }
 
-.page-banner h1 { font-family: 'Kavivanar', cursive; font-size: 3.5rem; }
+.page-banner h1 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 3rem;
+}
 
-/* Footer */
+/* --- COMMON GRID & PDF CARDS --- */
+.pdf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.pdf-card {
+    background: var(--white);
+    border-radius: 25px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.pdf-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.pdf-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-bottom: 4px solid var(--gold);
+}
+
+.pdf-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.pdf-info h3 {
+    font-size: 1.2rem;
+    color: var(--dark-text);
+    margin-bottom: 15px;
+}
+
+.pdf-info span {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #eee;
+    color: #333;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+/* --- BUTTONS & FOOTER --- */
+.card-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: var(--dark-text);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.card-btn:hover {
+    transform: scale(1.05);
+}
+
 footer {
-    background: var(--secondary); color: var(--white);
-    padding: 60px 20px; text-align: center;
+    background: var(--dark-text);
+    color: var(--white);
+    padding: 60px 20px;
+    text-align: center;
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
     margin-top: 50px;
 }
-footer strong { color: var(--gold); }
 
-/* --- MOBILE OPTIMIZED STYLES (Responsive) --- */
-
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    
-    /* 1. நேர்த்தியான நேவிகேஷன் (Header) */
-    nav {
-        flex-direction: column;
-        padding: 15px 10px;
-    }
-
-    nav ul {
-        margin-top: 15px;
-        gap: 5px;
-        flex-wrap: wrap; /* பட்டன்கள் பல வரிகளில் வரும் */
-        justify-content: center;
-    }
-
-    nav ul li a {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
-
-    /* 2. பேனர் (Banner) */
-    .page-banner {
-        height: 200px;
-        padding: 40px 15px;
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    }
-
-    .page-banner h1 {
-        font-size: 1.8rem; /* எழுத்து அளவு குறைப்பு */
-    }
-
-    /* 3. கிரிட் அமைப்பு (Grid - 1 வரிசையாக மாற்றுதல்) */
-    .pdf-grid, .files-main-grid, .event-info-grid {
-        grid-template-columns: 1fr !important; /* ஒரு வரிசையில் ஒன்று மட்டும் வரும் */
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    /* 4. கார்டுகள் (Cards - தொடுவதற்கு எளிதாக) */
-    .pdf-card, .category-glass-card {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 400px; /* அகலம் கட்டுப்படுத்தப்படும் */
-        border-radius: 20px;
-    }
-
-    .pdf-info h3 {
-        font-size: 1.1rem;
-    }
-
-    /* 5. பட்டன்கள் (Touch-Friendly Buttons) */
-    .pdf-info span, .card-btn, .cta-button {
-        width: 100%; /* பட்டன் முழு அகலத்திற்கு வரும் */
-        box-sizing: border-box;
-        padding: 15px;
-        font-size: 1rem;
-        display: block;
-        text-align: center;
-    }
-
-    /* 6. படங்கள் (Images) */
-    .about-image img, .pdf-card img {
-        height: auto;
-        min-height: 180px;
-    }
-
-    /* 7. உள்ளடக்கம் (Spacing) */
-    .container, .files-wrapper {
-        padding: 20px 15px;
-    }
-
-    .section-title-left {
-        font-size: 1.6rem;
-        text-align: center;
-    }
-
-    .underline-left {
-        margin: 0 auto 25px; /* நடுவில் கொண்டு வரப்பட்டது */
-    }
-
-    /* 8. அடிக்குறிப்பு (Footer) */
-    footer {
-        padding: 50px 20px 30px;
-        font-size: 0.9rem;
-    }
-}
-
-/* 9. மிகச்சிறிய போன்களுக்கு (Small Phones) */
-@media (max-width: 480px) {
-    .page-banner h1 {
-        font-size: 1.5rem;
-    }
-    
-    .logo a {
-        font-size: 1.2rem;
-    }
-    
-    .logo img {
-        height: 40px;
-    }
+    .pdf-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .page-banner h1 { font-size: 2rem; }
+    nav ul { display: none; } /* Mobile menu logic added separately if needed */
 }
