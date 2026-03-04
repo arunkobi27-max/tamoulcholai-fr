@@ -271,11 +271,6 @@
                 </a>
             </div>
 
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" id="fileSearch" placeholder="தேடுக (எ.கா: தேர்வு)..." onkeyup="filterFiles()">
-            </div>
-
             <ul>
                 <li><a href="index.html">முகப்பு</a></li>
                 <li><a href="about.html">எம்மைப்பற்றி</a></li>
@@ -359,18 +354,6 @@
     <footer>
         <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
     </footer>
-
-    <script>
-        // தேடல் வசதி (Search Filter)
-        function filterFiles() {
-            let input = document.getElementById('fileSearch').value.toLowerCase();
-            let items = document.getElementsByClassName('timeline-item');
-            for (let i = 0; i < items.length; i++) {
-                let text = items[i].innerText.toLowerCase();
-                items[i].style.display = text.includes(input) ? "" : "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
