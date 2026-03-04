@@ -311,7 +311,80 @@
     #countdown { gap: 10px; }
     .countdown-item { min-width: 60px; padding: 10px; }
     .countdown-item span { font-size: 1.2rem; }
-}        
+}
+
+.quote-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.quote-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--primary); /* பச்சை நிற பார்டர் */
+    position: relative;
+    transition: 0.3s;
+}
+
+.quote-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.quote-icon {
+    background: #eefdf4;
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.quote-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.quote-text p {
+    font-family: 'Kavivanar', cursive;
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin: 0;
+}
+
+.refresh-quote {
+    background: transparent;
+    border: none;
+    color: #bdc3c7;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.refresh-quote:hover {
+    color: var(--primary);
+    transform: rotate(180deg);
+}
+
+@media (max-width: 600px) {
+    .quote-card { flex-direction: column; text-align: center; padding: 25px; }
+    .refresh-quote { position: absolute; top: 10px; right: 10px; }
+}
     </style>
 </head>
 <body>
@@ -361,6 +434,21 @@
         <h1>தமிழ் இனிமை! நம் பெருமை!</h1>
         <p style="font-size: 1.4rem; color: var(--gold); font-weight: bold;">தமிழ்ச்சோலைத் தலைமைப் பணியகம் - பிரான்சு</p>
     </div>
+
+    <div class="quote-container">
+    <div class="quote-card">
+        <div class="quote-icon">
+            <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="quote-text">
+            <span class="quote-label">இன்றைய சிந்தனை:</span>
+            <p id="tamil-quote">அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு.</p>
+        </div>
+        <button onclick="changeQuote()" class="refresh-quote" title="புதிய சிந்தனை">
+            <i class="fas fa-sync-alt"></i>
+        </button>
+    </div>
+</div>
 
     <main class="container">
         <section class="intro-box">
@@ -449,5 +537,34 @@
         }
     }, 1000);
 </script>
+<script>
+    const tamilQuotes = [
+        "அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு.",
+        "கற்றதனால் ஆய பயனென்கொல் வாலறிவன் நற்றாள் தொழாஅர் எனின்.",
+        "மலர்மிசை ஏகினான் மாணடி சேர்ந்தார் நிலமிசை நீடுவாழ் வார்.",
+        "வேண்டுதல் வேண்டாமை இலானடி சேர்ந்தார்க்கு யாண்டும் இடும்பை இல.",
+        "இருள்சேர் இருவினையும் சேரா இறைவன் பொருள்சேர் புகழ்புரிந்தார் மாட்டு.",
+        "பொறிவாயில் ஐந்தவித்தான் பொய்தீர் ஒழுக்க நெறிநின்றார் நீடுவாழ் வார்",
+        "தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க் கல்லால் மனக்கவலை மாற்றல் அரிது.",
+        "அறவாழி அந்தணன் தாள்சேர்ந்தார்க் கல்லால் பிறவாழி நீந்தல் அரிது ."
+        "கோளில் பொறியின் குணமிலவே எண்குணத்தான் தாளை வணங்காத் தலை."
+        "பபிறவிப் பெருங்கடல் நீந்துவர் நீந்தார் இறைவன் அடிசேரா தார்  ."
+    ];
+
+    function changeQuote() {
+        const quoteElement = document.getElementById('tamil-quote');
+        const randomIndex = Math.floor(Math.random() * tamilQuotes.length);
+        
+        // மென்மையான அனிமேஷனுடன் மாற்ற
+        quoteElement.style.opacity = 0;
+        setTimeout(() => {
+            quoteElement.innerText = tamilQuotes[randomIndex];
+            quoteElement.style.opacity = 1;
+        }, 300);
+    }
+
+    // பக்கம் லோட் ஆகும் போது ஒருமுறை இயக்க
+    window.addEventListener('DOMContentLoaded', changeQuote);
+</script> 
 </body>
 </html>
