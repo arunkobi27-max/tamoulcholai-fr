@@ -4,335 +4,304 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>தமிழ் சோலை | முகப்பு</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> <style>
-       /* --- INDEX CSS : Ultra-Modern & Rich Professional Style --- */
+    
+    <style>
+        /* --- GLOBAL & THEME VARIABLES --- */
+        :root {
+            --primary: #8e44ad;
+            --primary-dark: #6c5ce7;
+            --accent: #e67e22;
+            --secondary: #2c3e50;
+            --gold: #f1c40f;
+            --white: #ffffff;
+            --bg-light: #f4f7f6;
+            --text-main: #2d3436;
+            --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            --shadow-rich: 0 15px 35px rgba(0,0,0,0.1);
+        }
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-    --primary: #8e44ad;        /* Violet Royal */
-    --primary-light: #9b59b6;
-    --accent: #e67e22;         /* Orange profond */
-    --secondary: #2c3e50;      /* Bleu Minuit */
-    --gold: #f1c40f;           /* Jaune Or */
-    --text-main: #2d3436;
-    --white: #ffffff;
-    --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
-    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
-}
+        body {
+            font-family: 'Baloo Thambi 2', cursive;
+            background: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-}
+        /* --- NAVIGATION & HEADER --- */
+        header {
+            background: rgba(44, 62, 80, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
 
-body {
-    font-family: 'Baloo Thambi 2', cursive;
-    background: #f8f9fa;
-    color: var(--text-main);
-    overflow-x: hidden;
-    line-height: 1.7;
-}
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-/* --- Navigation --- */
-header {
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 12px 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Kavivanar', cursive;
+            font-size: 1.8rem;
+        }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+        .logo img { height: 50px; margin-right: 12px; }
 
-.logo {
-    display: flex;
-    align-items: center;
-    font-family: 'Kavivanar', cursive;
-    font-size: 1.8rem;
-    color: var(--gold);
-    text-decoration: none;
-}
+        /* Search Bar Style */
+        .search-container {
+            position: relative;
+            flex-grow: 1;
+            max-width: 300px;
+            margin: 0 20px;
+        }
 
-.logo img {
-    height: 55px;
-    margin-right: 15px;
-}
+        .search-container input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            outline: none;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 10px;
-}
+        .search-container i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+        }
 
-nav ul li a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 12px;
-}
+        /* Nav Links & Dropdown */
+        nav ul { display: flex; list-style: none; gap: 5px; align-items: center; }
+        nav ul li { position: relative; }
 
-nav ul li a:hover, nav ul li a.active {
-    background: var(--gradient);
-    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
-    transform: translateY(-2px);
-    color: white;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 10px;
+            display: block;
+        }
 
-/* --- Hero Banner --- */
-.page-banner {
-    background: linear-gradient(45deg, rgba(108, 92, 231, 0.75), rgba(44, 62, 80, 0.85)), 
-                url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1500');
-    background-size: cover;
-    background-position: center;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    text-align: center;
-}
+        nav ul li a:hover, nav ul li a.active { background: var(--gradient); }
 
-.page-banner h1 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
+        /* Dropdown Menu CSS */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: var(--shadow-rich);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 10px 0;
+        }
 
-/* --- Intro Box (Effet de chevauchement) --- */
-.intro-box {
-    background: var(--white);
-    padding: 50px;
-    border-radius: 35px;
-    box-shadow: var(--shadow-rich);
-    text-align: center;
-    max-width: 1000px;
-    margin: -80px auto 60px;
-    position: relative;
-    z-index: 10;
-    border-top: 8px solid var(--primary);
-}
+        .dropdown:hover .dropdown-menu { display: block; }
 
-.intro-box h2 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.2rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
+        .dropdown-menu li a {
+            color: var(--secondary) !important;
+            padding: 12px 20px;
+            border-radius: 0;
+            font-size: 0.95rem;
+        }
 
-/* --- Grid de Contact & Horaires --- */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-  /* Cartes d'infos (Adresse, Tel, Email) */
-.contact-info-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    grid-column: 1 / -1; /* Prend toute la largeur en haut */
-    margin-bottom: 20px;
-}
+        .dropdown-menu li a:hover { background: #f8f9fa; color: var(--primary) !important; }
 
-.info-box {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: var(--shadow-rich);
-    border-bottom: 4px solid var(--primary);
-}
+        /* --- BANNER --- */
+        .page-banner {
+            background: linear-gradient(45deg, rgba(108, 92, 231, 0.7), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
 
-.info-box i {
-    font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
+        .page-banner h1 { font-family: 'Kavivanar', cursive; font-size: 3.5rem; margin-bottom: 10px; }
 
-.info-box p {
-    font-weight: 600;
-    color: var(--secondary);
-    margin: 0;
-}      
+        /* --- CONTACT SECTION --- */
+        .intro-box {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: var(--shadow-rich);
+            max-width: 900px;
+            margin: -60px auto 50px;
+            position: relative;
+            text-align: center;
+            border-top: 6px solid var(--primary);
+        }
 
-.contact-card, .hours-card {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: var(--shadow-rich);
-}
+        .contact-info-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
 
-.hours-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
+        .info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-rich);
+            transition: 0.3s;
+        }
 
-.hours-table td {
-    padding: 15px 10px;
-    border-bottom: 1px solid #f1f2f6;
-    color: var(--secondary);
-}
+        .info-box:hover { transform: translateY(-5px); }
+        .info-box i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
 
-.status-closed { color: #e74c3c; font-weight: bold; }
-.status-open { color: #27ae60; font-weight: bold; }
+        .hours-card {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: var(--shadow-rich);
+        }
 
-/* --- Footer --- */
-footer {
-    background: var(--secondary);
-    color: var(--white);
-    padding: 80px 20px;
-    text-align: center;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-    margin-top: 50px;
-}
+        .hours-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .hours-table td { padding: 15px; border-bottom: 1px solid #eee; }
+        .status-closed { color: #e74c3c; font-weight: bold; }
+        .status-open { color: #27ae60; font-weight: bold; }
 
-footer strong { color: var(--gold); }
+        /* --- FOOTER --- */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            margin-top: 50px;
+        }
+        footer strong { color: var(--gold); }
 
-/* --- Mobile Responsive --- */
-@media (max-width: 768px) {
-    .page-banner { height: 300px; clip-path: none; }
-    .page-banner h1 { font-size: 2.2rem; }
-    .intro-box { margin: -40px 15px 40px; padding: 30px 20px; }
-    .contact-grid { grid-template-columns: 1fr; }
-    nav { flex-direction: column; gap: 15px; }
-    nav ul { flex-wrap: wrap; justify-content: center; }
-}
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 15px; }
+            .search-container { max-width: 100%; order: 3; }
+            .page-banner h1 { font-size: 2.2rem; }
+            .intro-box { margin: -30px 15px 30px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="hero-section">
-        <header>
-            <nav>
-                <div class="logo">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-        <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Tamilcholai Logo" style="height: 50px; width: auto; margin-right: 15px;">
-        தமிழ்ச்சோலை
-    </a>
-</div>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo">
+                    தமிழ்ச்சோலை
+                </a>
+            </div>
 
-         <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" id="fileSearch" placeholder="Rechercher un fichier (ex: Grade 5)..." onkeyup="filterFiles()">
-        </div> 
-                
-                <ul>
-                    <li><a href="index.html" class="active">முகப்பு</a></li>
-                    <li><a href="about.html">எம்மைப்பற்றி</a></li>
-                    <li><a href="activities.html">செயற்பாடுகள்</a></li>
-                    <li><a href="events.html">நிகழ்வுகள்</a></li>
-                    <li class="dropdown">
-        <a href="files.html" class="active">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-            <li><a href="half-yearly.html"><i class="fas fa-file-alt"></i> அரையாண்டுத் தேர்வு</a></li>
-            <li><a href="public-exam.html"><i class="fas fa-graduation-cap"></i> பொதுத்தேர்வு</a></li>
-            <li><a href="essays.html"><i class="fas fa-pen-nib"></i> கட்டுரைகள்</a></li>
-        </ul>
-    </li>
-                </ul>
-            </nav>
-        </header>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="fileSearch" placeholder="தேடுக..." onkeyup="filterFiles()">
+            </div>
 
-       <div class="page-banner">
-    <h1>தமிழ் இனிமை! நம் பெருமை!</h1>
-    <p style="font-size: 1.5rem; color: #f39c12; font-weight: bold;">தமிழ்ச்சோலைத் தலைமைப் பணியகம் - பிரான்சு</p>
-</div>
+            <ul>
+                <li><a href="index.html" class="active">முகப்பு</a></li>
+                <li><a href="about.html">எம்மைப்பற்றி</a></li>
+                <li><a href="activities.html">செயற்பாடுகள்</a></li>
+                <li><a href="events.html">நிகழ்வுகள்</a></li>
+                <li class="dropdown">
+                    <a href="files.html">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="half-yearly.html">அரையாண்டுத் தேர்வு</a></li>
+                        <li><a href="public-exam.html">பொதுத்தேர்வு</a></li>
+                        <li><a href="essays.html">கட்டுரைகள்</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<main class="container">
-    <section id="about-mini" class="intro-box">
-        <h4>
-            பிரான்சில் வளரும் எம் இளந்தலைமுறையினரைத் தமிழோடும் தமிழ்க் கலைகளோடும் தமிழ்ப்பண்பாட்டோடும் இணைக்கும் கல்விசார் அமைப்பு.
-        </h4>
-    </section>
+    <div class="page-banner">
+        <h1>தமிழ் இனிமை! நம் பெருமை!</h1>
+        <p style="font-size: 1.4rem; color: var(--gold); font-weight: bold;">தமிழ்ச்சோலைத் தலைமைப் பணியகம் - பிரான்சு</p>
+    </div>
 
-    <section class="contact-section">
-    <div class="container">
-        <div class="contact-header">
-            <h2>எங்களைத் தொடர்பு கொள்ள</h2>
-            <div class="underline-left" style="margin: 0 auto 30px;"></div>
-        </div>
+    <main class="container">
+        <section class="intro-box">
+            <h3>பிரான்சில் வளரும் எம் இளந்தலைமுறையினரைத் தமிழோடும் கலைகளோடும் இணைக்கும் கல்விசார் அமைப்பு.</h3>
+        </section>
 
-        <div class="container">
-    <div class="contact-container">
-        
         <div class="contact-info-wrapper">
             <div class="info-box">
                 <i class="fas fa-map-marker-alt"></i>
-                <p>165 bd de la Villette<br>75010 Paris</p>
+                <p><strong>முகவரி:</strong><br>165 bd de la Villette, 75010 Paris</p>
             </div>
             <div class="info-box">
                 <i class="fas fa-phone"></i>
-                <p>09 84 06 38 83</p>
+                <p><strong>அழைக்க:</strong><br>09 84 06 38 83</p>
             </div>
             <div class="info-box">
                 <i class="fas fa-envelope"></i>
-                <p>tamoulcholai@yahoo.fr</p>
+                <p><strong>மின்னஞ்சல்:</strong><br>tamoulcholai@yahoo.fr</p>
             </div>
         </div>
 
         <div class="hours-card">
-            <h3>பணியக நேரம் (Horaires)</h3>
+            <h3 style="text-align: center; color: var(--primary);">பணியக நேரம் (Horaires)</h3>
             <table class="hours-table">
                 <tr>
-                    <td class="day-column">திங்கள் - செவ்வாய்</td>
+                    <td>திங்கள் - செவ்வாய்</td>
                     <td class="status-closed">மூடப்பட்டிருக்கும்</td>
                 </tr>
                 <tr>
-                    <td class="day-column">புதன் - வியாழன் - வெள்ளி - சனி - ஞாயிறு</td>
+                    <td>புதன் - ஞாயிறு</td>
                     <td class="status-open">14:30 – 19:30</td>
                 </tr>
             </table>
         </div>
-
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.743144185731!2d2.3670621!3d48.882193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e6962f995c3%3A0x633f8b9f1d09e5b7!2s165%20Boulevard%20de%20la%20Villette%2C%2075010%20Paris!5e0!3m2!1sfr!2sfr!4v1700000000000" 
-                width="100%" height="100%" style="border:0; border-radius:30px; min-height: 300px;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-
-    </div>
-</div>
-</section>
     </main>
-    <footer>
-        <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
-    </footer>
-        <script>
-function filterFiles() {
-    let input = document.getElementById('fileSearch').value.toLowerCase();
-    let cards = document.getElementsByClassName('pdf-card');
 
-    for (let i = 0; i < cards.length; i++) {
-        let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-        if (title.includes(input)) {
-            cards[i].style.display = "";
-        } else {
-            cards[i].style.display = "none";
+    <footer>
+        <p>© 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
+    </footer>
+
+    <script>
+        // தேடல் வசதி (இது கோப்புகள் இருக்கும் பக்கத்தில் மட்டுமே வேலை செய்யும்)
+        function filterFiles() {
+            let input = document.getElementById('fileSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('pdf-card');
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].querySelector('h3').innerText.toLowerCase();
+                cards[i].style.display = title.includes(input) ? "" : "none";
+            }
         }
-    }
-}
-</script>
+    </script>
 </body>
 </html>
