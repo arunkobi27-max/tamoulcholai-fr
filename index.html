@@ -213,6 +213,42 @@
             .page-banner h1 { font-size: 2.2rem; }
             .intro-box { margin: -30px 15px 30px; }
         }
+
+        /* நகரும் செய்திப் பலகை வடிவமைப்பு */
+.news-ticker {
+    background: #2c3e50; /* அடர் நீல நிறம் */
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 3px solid #f1c40f; /* தங்க நிறக் கோடு */
+    font-family: 'Kavivanar', cursive;
+}
+
+.ticker-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite; /* வேகம் இங்கே மாற்றலாம் */
+    font-size: 1.1rem;
+}
+
+.ticker-content span {
+    margin-right: 50px; /* செய்திகளுக்கு இடையே இடைவெளி */
+}
+
+.ticker-content b {
+    color: #f1c40f; /* முக்கிய வார்த்தைகள் மஞ்சள் நிறத்தில் */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* மவுஸை மேலே வைக்கும்போது செய்தியை நிறுத்த */
+.news-ticker:hover .ticker-content {
+    animation-play-state: paused;
+}
     </style>
 </head>
 <body>
@@ -242,6 +278,14 @@
             </ul>
         </nav>
     </header>
+
+    <div class="news-ticker">
+    <div class="ticker-content">
+        <span>📢 <b>அறிவிப்பு:</b> 2024-2025 கல்வியாண்டிற்கான பொதுத்தேர்வு வினாத்தாள்கள் இப்போது பதிவேற்றப்பட்டுள்ளன!</span>
+        <span>🏆 <b>வெற்றி:</b> திருக்குறள் திறன் போட்டியில் பங்குபெற விண்ணப்பங்கள் வரவேற்கப்படுகின்றன.</span>
+        <span>📚 <b>புதியவை:</b> 10-ஆம் வகுப்பு மற்றும் 12-ஆம் வகுப்பு மாதிரி வினாத்தாள்கள் தயார்!</span>
+    </div>
+</div>
 
     <div class="page-banner">
         <h1>தமிழ் இனிமை! நம் பெருமை!</h1>
