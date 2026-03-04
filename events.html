@@ -4,226 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>நிகழ்வுகள் | தமிழ் சோலை</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"><style>
-    /* --- EVENTS PAGE CSS : Ultra-Modern & Rich Style --- */
+    
+    <style>
+        /* --- GLOBAL & THEME VARIABLES --- */
+        :root {
+            --primary: #8e44ad;
+            --primary-dark: #6c5ce7;
+            --accent: #e67e22;
+            --secondary: #2c3e50;
+            --gold: #f1c40f;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+            --text-main: #2d3436;
+            --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            --shadow-rich: 0 15px 35px rgba(0,0,0,0.1);
+        }
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-    --primary: #8e44ad;
-    --primary-light: #9b59b6;
-    --accent: #e67e22;
-    --secondary: #2c3e50;
-    --gold: #f1c40f;
-    --text-main: #2d3436;
-    --white: #ffffff;
-    --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
-    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
-}
+        body {
+            font-family: 'Baloo Thambi 2', cursive;
+            background: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
 
-body {
-    font-family: 'Baloo Thambi 2', cursive;
-    background: #f8f9fa;
-    color: var(--text-main);
-    line-height: 1.8;
-}
+        /* --- NAVIGATION & HEADER --- */
+        header {
+            background: rgba(44, 62, 80, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
 
-/* Header & Nav */
-header {
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 12px 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Kavivanar', cursive;
+            font-size: 1.8rem;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 15px;
-}
+        .logo img { height: 50px; margin-right: 12px; }
 
-nav ul li a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 12px;
-}
+        nav ul { display: flex; list-style: none; gap: 5px; align-items: center; }
+        nav ul li { position: relative; }
 
-nav ul li a:hover, nav ul li a.active {
-    background: var(--gradient);
-    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
 
-/* Banner */
-.page-banner {
-    background: linear-gradient(45deg, rgba(44, 62, 80, 0.7), rgba(142, 68, 173, 0.8)), 
-                url('https://images.unsplash.com/photo-1459749411177-042180ce6742?auto=format&fit=crop&q=80&w=1500');
-    background-size: cover;
-    background-position: center;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    text-align: center;
-}
+        nav ul li a:hover, nav ul li a.active { background: var(--gradient); }
 
-.hero-overlay h1 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 3.5rem;
-    margin-bottom: 10px;
-}
+        /* Dropdown Menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: var(--shadow-rich);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 10px 0;
+        }
 
-/* Event Intro Section */
-.event-details {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    background: white;
-    padding: 50px;
-    border-radius: 40px;
-    box-shadow: var(--shadow-rich);
-    margin-top: -60px; /* Overlap with banner */
-    position: relative;
-    z-index: 10;
-}
+        .dropdown:hover .dropdown-menu { display: block; }
 
-.event-text { flex: 1.2; }
+        .dropdown-menu li a {
+            color: var(--secondary) !important;
+            padding: 12px 20px;
+            border-radius: 0;
+        }
 
-.event-text h2 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.2rem;
-    color: var(--primary);
-    margin-bottom: 15px;
-}
+        .dropdown-menu li a:hover { background: #f8f9fa; color: var(--primary) !important; }
 
-.underline-left {
-    width: 60px;
-    height: 5px;
-    background: var(--accent);
-    border-radius: 10px;
-    margin-bottom: 25px;
-}
+        /* --- BANNER --- */
+        .page-banner {
+            background: linear-gradient(45deg, rgba(44, 62, 80, 0.7), rgba(142, 68, 173, 0.8)), 
+                        url('https://images.unsplash.com/photo-1459749411177-042180ce6742?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
 
-.about-image { flex: 0.8; }
-.about-image img {
-    width: 100%;
-    border-radius: 30px;
-    box-shadow: var(--shadow-rich);
-}
+        .hero-overlay h1 { font-family: 'Kavivanar', cursive; font-size: 3.5rem; margin-bottom: 10px; }
 
-/* Info Cards Grid */
-.event-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
-}
+        /* --- EVENT INTRO SECTION --- */
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
 
-.rich-info-card {
-    background: white;
-    padding: 40px;
-    border-radius: 35px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-    border-left: 10px solid var(--primary);
-    transition: 0.4s;
-}
+        .event-details {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: white;
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: var(--shadow-rich);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            border-bottom: 8px solid var(--accent);
+        }
 
-.rich-info-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-rich);
-}
+        .event-text { flex: 1.2; }
+        .event-text h2 { font-family: 'Kavivanar', cursive; font-size: 2.2rem; color: var(--primary); margin-bottom: 15px; }
+        .underline-left { width: 60px; height: 5px; background: var(--accent); border-radius: 10px; margin-bottom: 25px; }
 
-.rich-info-card h3 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: var(--secondary);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+        .about-image { flex: 0.8; }
+        .about-image img { width: 100%; border-radius: 30px; box-shadow: var(--shadow-rich); transition: 0.4s; }
+        .about-image img:hover { transform: scale(1.02); }
 
-.rich-info-card h3 i { color: var(--accent); }
+        /* --- INFO CARDS GRID --- */
+        .event-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
 
-.rich-info-card ul {
-    list-style: none;
-    padding: 0;
-}
+        .rich-info-card {
+            background: white;
+            padding: 40px;
+            border-radius: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border-top: 8px solid var(--primary);
+            transition: 0.4s;
+        }
 
-.rich-info-card ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #f1f2f6;
-}
+        .rich-info-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-rich); }
 
-/* Conclusion Box */
-.event-conclusion {
-    background: var(--gradient);
-    color: white;
-    padding: 50px;
-    border-radius: 40px;
-    text-align: center;
-    margin-top: 60px;
-    box-shadow: 0 20px 40px rgba(108, 92, 231, 0.3);
-}
+        .rich-info-card h3 {
+            font-family: 'Kavivanar', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .rich-info-card h3 i { color: var(--accent); }
 
-.event-conclusion h3 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
+        .rich-info-card ul { list-style: none; }
+        .rich-info-card ul li { padding: 12px 0; border-bottom: 1px solid #f1f2f6; font-weight: 600; color: #555; }
 
-/* CTA Button */
-.cta-button {
-    display: inline-block;
-    padding: 18px 40px;
-    border-radius: 50px;
-    color: white;
-    text-decoration: none;
-    font-weight: 800;
-    box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
-    transition: 0.4s;
-}
+        /* --- CONCLUSION & CTA --- */
+        .event-conclusion {
+            background: var(--gradient);
+            color: white;
+            padding: 50px;
+            border-radius: 40px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.3);
+        }
 
-.cta-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(39, 174, 96, 0.4);
-}
+        .cta-container { text-align: center; margin: 60px 0; }
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            border-radius: 50px;
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+            transition: 0.4s;
+        }
+        .cta-button:hover { transform: scale(1.05); background: #219150; }
 
-/* Footer */
-footer {
-    background: var(--secondary);
-    color: var(--white);
-    padding: 80px 20px 40px;
-    text-align: center;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-}
+        /* --- FOOTER --- */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 20px 40px;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+        footer strong { color: var(--gold); }
 
-footer strong { color: var(--gold); }
-
-/* Mobile */
-@media (max-width: 768px) {
-    .event-details { flex-direction: column; padding: 30px; text-align: center; margin-top: -30px; }
-    .page-banner h1 { font-size: 2.2rem; }
-    .underline-left { margin: 0 auto 20px; }
-}
+        /* --- MOBILE --- */
+        @media (max-width: 992px) {
+            nav { flex-direction: column; gap: 15px; }
+            .event-details { flex-direction: column; padding: 30px; text-align: center; margin-top: -30px; }
+            .page-banner h1 { font-size: 2.2rem; }
+            .underline-left { margin: 0 auto 20px; }
+        }
     </style>
 </head>
 <body>
@@ -231,24 +227,24 @@ footer strong { color: var(--gold); }
     <header>
         <nav>
             <div class="logo">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-        <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Tamilcholai Logo" style="height: 50px; width: auto; margin-right: 15px;">
-        தமிழ்ச்சோலை
-    </a>
-</div>
+                <a href="index.html">
+                    <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo">
+                    தமிழ்ச்சோலை
+                </a>
+            </div>
             <ul>
                 <li><a href="index.html">முகப்பு</a></li>
                 <li><a href="about.html">எம்மைப்பற்றி</a></li>
                 <li><a href="activities.html">செயற்பாடுகள்</a></li>
                 <li><a href="events.html" class="active">நிகழ்வுகள்</a></li>
-               <li class="dropdown">
-        <a href="files.html" class="active">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-            <li><a href="half-yearly.html"><i class="fas fa-file-alt"></i> அரையாண்டுத் தேர்வு</a></li>
-            <li><a href="public-exam.html"><i class="fas fa-graduation-cap"></i> பொதுத்தேர்வு</a></li>
-            <li><a href="essays.html"><i class="fas fa-pen-nib"></i> கட்டுரைகள்</a></li>
-        </ul>
-    </li>
+                <li class="dropdown">
+                    <a href="files.html">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="half-yearly.html">அரையாண்டுத் தேர்வு</a></li>
+                        <li><a href="public-exam.html">பொதுத்தேர்வு</a></li>
+                        <li><a href="essays.html">கட்டுரைகள்</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -261,52 +257,52 @@ footer strong { color: var(--gold); }
     </div>
 
     <main class="container">
-    
-    <section class="event-details">
-        <div class="event-text">
-            <h2>திருக்குறள் திறன் போட்டி: நோக்கமும் நிறைவும்</h2>
-            <div class="underline-left"></div>
-            <p>தமிழரின் உலகாந்த அறிவியல் பார்வைக்கு எடுத்துக்காட்டாகத் திகழும் பல்நூறு நூல்களில் முதன்மையானது திருக்குறள். மாந்த வாழ்வியலின் ஒவ்வோரு கூறுகளையும் கட்டமைத்துக்கொள்ள வழிசொல்லும் உன்னத இலக்கியம்.</p>
-            <p style="margin-top: 15px;">உலகப் பொதுமறையாய் நிலைத்திருக்கும் வியத்தகு புதையலே எம் திருக்குறள்.</p>
+        
+        <section class="event-details">
+            <div class="event-text">
+                <h2>திருக்குறள் திறன் போட்டி: நோக்கமும் நிறைவும்</h2>
+                <div class="underline-left"></div>
+                <p>தமிழரின் உலகாந்த அறிவியல் பார்வைக்கு எடுத்துக்காட்டாகத் திகழும் முதன்மையான நூல் திருக்குறள். மாந்த வாழ்வியலின் ஒவ்வொரு கூறுகளையும் கட்டமைத்துக்கொள்ள வழிசொல்லும் உன்னத இலக்கியம்.</p>
+                <p style="margin-top: 15px;">உலகப் பொதுமறையாய் நிலைத்திருக்கும் வியத்தகு புதையலே எம் திருக்குறள். இதனை இளையோர் நெஞ்சில் விதைப்பதே எமது இலக்கு.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://www.tamoulcholai.fr/uploads/sections/sec_1770734669.png" alt="திருக்குறள் போட்டி">
+            </div>
+        </section>
+
+        <div class="event-info-grid">
+            <div class="rich-info-card">
+                <h3><i class="fas fa-bullseye"></i> முதன்மை நோக்கங்கள்</h3>
+                <ul>
+                    <li><strong>அறமும் அறிவியலும்:</strong> தமிழரின் வாழ்வியல் அறத்தை மாணவரிடம் கொண்டு செல்லுதல்.</li>
+                    <li><strong>இலக்கியச் செறிவு:</strong> தமிழ் இலக்கியத்தின் ஆழத்தை இளைய தலைமுறைக்கு உணரவைத்தல்.</li>
+                    <li><strong>சிந்தனைத் திறன்:</strong> குறள் வழி நின்று சிந்திக்கும் ஆற்றலை வளர்த்தல்.</li>
+                </ul>
+            </div>
+
+            <div class="rich-info-card" style="border-top-color: var(--accent);">
+                <h3><i class="fas fa-trophy"></i> போட்டி அமைப்பு முறை</h3>
+                <p>9 அகவைப் பிரிவுகளுடன் 3 முக்கிய கட்டங்களாக நடைபெறும்:</p>
+                <ul>
+                    <li>1. தமிழ்ச்சோலை மட்டம் (உள்ளூர் அளவில்)</li>
+                    <li>2. திணைக்கள மட்டம் (மண்டல அளவில்)</li>
+                    <li>3. இறுதிப் போட்டி (தேசிய அளவில்)</li>
+                </ul>
+            </div>
         </div>
-        <div class="about-image">
-            <img src="https://www.tamoulcholai.fr/uploads/sections/sec_1770734669.png" alt="திருக்குறள் போட்டி">
-        </div>
-    </section>
 
-    <div class="event-info-grid">
-        <div class="rich-info-card">
-            <h3><i class="fas fa-bullseye"></i> முதன்மை நோக்கங்கள்</h3>
-            <ul>
-                <li><strong>அறமும் அறிவியலும்:</strong> தமிழரின் அறத்தை மாணவரிடம் கொண்டு செல்லுதல்.</li>
-                <li><strong>இலக்கியச் செறிவு:</strong> தமிழ் இலக்கியத்தின் ஆழத்தை இளைய தலைமுறைக்கு உணரவைத்தல்.</li>
-                <li><strong>பரிணாம வளர்ச்சி:</strong> குறள் சார்ந்த அறிவுத்திறனை ஊட்டுதல்.</li>
-            </ul>
+        <section class="event-conclusion">
+            <h3>✅ நிறைவுரை: ஒரு உந்துகருவி</h3>
+            <p>இது ஒரு போட்டியாக மட்டுமே நின்றுவிடாது, புலம்பெயர் தமிழ் இளையோருக்கு எம் மொழி மற்றும் இலக்கிய அறிவியல் மீதான நேர்மறையான கண்ணோட்டத்தை உருவாக்கி, அவர்களைத் தமிழோடு பிணைக்கும் ஓர் உந்துகருவியாக அமைகிறது.</p>
+        </section>
+
+        <div class="cta-container">
+            <a href="thirukkural.html" class="cta-button">
+                திருக்குறள் பற்றிய மேலதிக தகவல்கள் <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
-        <div class="rich-info-card" style="border-left-color: var(--accent);">
-            <h3><i class="fas fa-trophy"></i> போட்டி அமைப்பு முறை</h3>
-            <p>9 அகவைப் பிரிவுகளுடன் 3 கட்டங்களாக வடிவமைக்கப்பட்டுள்ளது:</p>
-            <ul>
-                <li>1. தமிழ்ச்சோலை மட்டம்</li>
-                <li>2. திணைக்கள மட்டம்</li>
-                <li>3. இறுதிப் போட்டி</li>
-            </ul>
-        </div>
-    </div>
-
-    <section class="event-conclusion">
-        <h3>✅ நிறைவுரை: ஒரு உந்துகருவி</h3>
-        <p>இது ஒரு போட்டியாக மட்டுமே நின்றுவிடாது, புலம்பெயர் தமிழ் இளையோருக்கு எம் மொழி மற்றும் இலக்கிய அறிவியல் மீதான நேர்மறையான கண்ணோட்டத்தை உருவாக்கி, அவர்களை நகர்த்தும் ஓர் உந்துகருவியாக அமைகிறது.</p>
-    </section>
-
-</main>
-
-<div style="text-align: center; margin: 50px 0;">
-    <a href="thirukkural.html" class="cta-button" style="background-color: #27ae60; font-size: 1.2rem;">
-        திருக்குறள் பற்றிய மேலதிக தகவல்கள் <i class="fas fa-arrow-right"></i>
-    </a>
-</div>
+    </main>
   
     <footer>
         <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
