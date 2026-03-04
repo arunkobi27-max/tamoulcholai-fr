@@ -4,265 +4,290 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>செயற்பாடுகள் | தமிழ் சோலை</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link rel="stylesheet" href="style.css"><style>
-/* --- ACTIVITIES PAGE CSS: Modern Timeline Style --- */
+    
+    <style>
+        /* --- GLOBAL & THEME VARIABLES --- */
+        :root {
+            --primary: #8e44ad;
+            --primary-dark: #6c5ce7;
+            --accent: #e67e22;
+            --secondary: #2c3e50;
+            --gold: #f1c40f;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+            --text-main: #2d3436;
+            --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            --shadow-rich: 0 15px 35px rgba(0,0,0,0.1);
+        }
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-    --primary: #8e44ad;
-    --primary-light: #9b59b6;
-    --accent: #e67e22;
-    --secondary: #2c3e50;
-    --gold: #f1c40f;
-    --text-main: #2d3436;
-    --white: #ffffff;
-    --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
-    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
-}
+        body {
+            font-family: 'Baloo Thambi 2', cursive;
+            background: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-body {
-    font-family: 'Baloo Thambi 2', cursive;
-    background: #f8f9fa;
-    color: var(--text-main);
-    line-height: 1.8;
-}
+        /* --- NAVIGATION & HEADER --- */
+        header {
+            background: rgba(44, 62, 80, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
 
-/* Header & Nav */
-header {
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 12px 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Kavivanar', cursive;
+            font-size: 1.8rem;
+        }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 15px;
-}
+        .logo img { height: 50px; margin-right: 12px; }
 
-nav ul li a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 12px;
-}
+        /* Search Bar Style */
+        .search-container {
+            position: relative;
+            flex-grow: 1;
+            max-width: 250px;
+            margin: 0 20px;
+        }
 
-nav ul li a:hover, nav ul li a.active {
-    background: var(--gradient);
-    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
-}
+        .search-container input {
+            width: 100%;
+            padding: 8px 15px 8px 35px;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            outline: none;
+        }
 
-/* Banner */
-.page-banner {
-    background: linear-gradient(45deg, rgba(142, 68, 173, 0.8), rgba(108, 92, 231, 0.8)), 
-                url('https://images.unsplash.com/photo-1506784919141-93554972f770?auto=format&fit=crop&q=80&w=1500');
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    margin-bottom: 50px;
-}
+        .search-container i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+        }
 
-.page-banner h1 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 3.5rem;
-}
+        /* Nav Links */
+        nav ul { display: flex; list-style: none; gap: 5px; align-items: center; }
+        nav ul li { position: relative; }
 
-/* Layout */
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 20px;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
 
-.about-section {
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-    margin-bottom: 80px;
-    background: white;
-    padding: 50px;
-    border-radius: 40px;
-    box-shadow: var(--shadow-rich);
-}
+        nav ul li a:hover, nav ul li a.active { background: var(--gradient); }
 
-.about-section.reverse {
-    flex-direction: row-reverse;
-}
+        /* Dropdown Menu Style */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: var(--shadow-rich);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 10px 0;
+        }
 
-.section-title-left {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.2rem;
-    color: var(--primary);
-    margin-bottom: 10px;
-}
+        .dropdown:hover .dropdown-menu { display: block; }
 
-.underline-left {
-    width: 70px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
+        .dropdown-menu li a {
+            color: var(--secondary) !important;
+            padding: 12px 20px;
+            border-radius: 0;
+            font-size: 0.95rem;
+        }
 
-/* Timeline Style - ஸ்பெஷல் டிசைன் */
-.timeline-item {
-    position: relative;
-    padding-left: 30px;
-    border-left: 4px solid #eee;
-    margin-bottom: 30px;
-    transition: 0.3s;
-}
+        .dropdown-menu li a:hover { background: #f8f9fa; color: var(--primary) !important; }
 
-.timeline-item:hover {
-    border-left-color: var(--primary);
-}
+        /* --- BANNER --- */
+        .page-banner {
+            background: linear-gradient(45deg, rgba(142, 68, 173, 0.8), rgba(108, 92, 231, 0.8)), 
+                        url('https://images.unsplash.com/photo-1506784919141-93554972f770?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
 
-.timeline-item strong {
-    display: block;
-    font-size: 1.2rem;
-    color: var(--primary);
-    margin-bottom: 5px;
-    font-weight: 800;
-}
+        .page-banner h1 { font-family: 'Kavivanar', cursive; font-size: 3.5rem; }
 
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    left: -12px;
-    top: 5px;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border: 4px solid var(--primary);
-    border-radius: 50%;
-}
+        /* --- CONTENT SECTIONS --- */
+        .container { max-width: 1140px; margin: 0 auto; padding: 40px 20px; }
 
-/* Image Style */
-.about-image {
-    flex: 0.7;
-    text-align: center;
-}
+        .about-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            margin-bottom: 80px;
+            padding: 50px;
+            background: white;
+            border-radius: 40px;
+            box-shadow: var(--shadow-rich);
+            border-top: 8px solid var(--primary);
+        }
 
-.about-image img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 20px;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-    transition: 0.5s;
-}
+        .about-section.reverse { flex-direction: row-reverse; }
 
-.about-image img:hover {
-    transform: translateY(-10px) rotate(2deg);
-}
+        .section-title-left {
+            font-family: 'Kavivanar', cursive;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
 
-/* Goal List */
-.goal-list {
-    list-style: none;
-    margin-top: 20px;
-}
+        .underline-left {
+            width: 70px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
 
-.goal-list li {
-    padding: 12px 0 12px 35px;
-    position: relative;
-    border-bottom: 1px solid #f1f1f1;
-}
+        /* Timeline Items */
+        .timeline-container { margin-top: 20px; }
 
-.goal-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: 900;
-    font-size: 1.2rem;
-}
+        .timeline-item {
+            position: relative;
+            padding-left: 35px;
+            border-left: 4px solid #f1f1f1;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
 
-/* Divider */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
-    margin: 40px 0;
-}
+        .timeline-item:hover { border-left-color: var(--primary); }
 
-/* Footer */
-footer {
-    background: var(--secondary);
-    color: var(--white);
-    padding: 80px 20px 40px;
-    text-align: center;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-}
+        .timeline-item strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
 
-footer strong {
-    color: var(--gold);
-}
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+        }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .about-section, .about-section.reverse {
-        flex-direction: column;
-        padding: 30px;
-    }
-    .about-image {
-        order: -1; /* மொபைலில் படம் முதலில் வரும் */
-        width: 100%;
-    }
-    .page-banner h1 {
-        font-size: 2.5rem;
-    }
-}
-</style>    
+        /* Goal List */
+        .goal-list { list-style: none; margin-top: 20px; }
+        .goal-list li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            border-bottom: 1px solid #f1f1f1;
+            font-weight: 600;
+        }
+        .goal-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        /* Images */
+        .about-image { flex: 0.7; text-align: center; }
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: 0.5s;
+        }
+        .about-image img:hover { transform: translateY(-10px) rotate(2deg); }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 20px 40px;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+        footer strong { color: var(--gold); }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav { flex-direction: column; gap: 15px; }
+            .search-container { max-width: 100%; margin: 10px 0; }
+            .about-section, .about-section.reverse { flex-direction: column; padding: 30px; }
+            .about-image { order: -1; width: 100%; }
+            .page-banner h1 { font-size: 2.2rem; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
             <div class="logo">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-        <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Tamilcholai Logo" style="height: 50px; width: auto; margin-right: 15px;">
-        தமிழ்ச்சோலை
-    </a>
-</div>
+                <a href="index.html">
+                    <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo">
+                    தமிழ்ச்சோலை
+                </a>
+            </div>
+
             <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" id="fileSearch" placeholder="Rechercher un fichier (ex: வளர் தமிழ் 1)..." onkeyup="filterFiles()">
-        </div>
+                <i class="fas fa-search"></i>
+                <input type="text" id="fileSearch" placeholder="தேடுக (எ.கா: தேர்வு)..." onkeyup="filterFiles()">
+            </div>
+
             <ul>
                 <li><a href="index.html">முகப்பு</a></li>
                 <li><a href="about.html">எம்மைப்பற்றி</a></li>
                 <li><a href="activities.html" class="active">செயற்பாடுகள்</a></li>
-                <li><a href="events.html">நிகழ்வுகள்</a></li>
                 <li class="dropdown">
-        <a href="files.html" class="active">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-            <li><a href="half-yearly.html"><i class="fas fa-file-alt"></i> அரையாண்டுத் தேர்வு</a></li>
-            <li><a href="public-exam.html"><i class="fas fa-graduation-cap"></i> பொதுத்தேர்வு</a></li>
-            <li><a href="essays.html"><i class="fas fa-pen-nib"></i> கட்டுரைகள்</a></li>
-        </ul>
-    </li>
+                    <a href="files.html">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="half-yearly.html">அரையாண்டுத் தேர்வு</a></li>
+                        <li><a href="public-exam.html">பொதுத்தேர்வு</a></li>
+                        <li><a href="essays.html">கட்டுரைகள்</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -278,53 +303,53 @@ footer strong {
                 <h2 class="section-title-left">கல்வி ஆண்டுச் செயற்பாடுகள்</h2>
                 <div class="underline-left"></div>
                 
-                <div class="timeline-item">
-                    <strong>யூலை – செப்ரம்பர்: கல்வியாண்டு</strong>
-                    <p>கல்வியாண்டுத் தொடக்கத்தில் தமிழர் கல்வி மேம்பாட்டுப் பேரவையினால் யேர்மன், பிரான்சு, இங்கிலாந்து, டென்மார்க், நோர்வே, இத்தாலி, நெதர்லாந்து, சுவீடன், பெல்சியம், பின்லாந்து, நியுசிலாந்து, கனடா ஆகிய நாடுகளில் உள்ள கல்விக் கழகங்கள் அனைத்திற்கும் வளர் தமிழ் பாடநூல்கள் வழங்கப்படும்.</p>
-                </div>
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <strong>யூலை – செப்ரம்பர்: கல்வியாண்டு</strong>
+                        <p>12-க்கும் மேற்பட்ட நாடுகளில் உள்ள கல்விக் கழகங்கள் அனைத்திற்கும் வளர் தமிழ் பாடநூல்கள் வழங்கப்படும்.</p>
+                    </div>
 
-                <div class="timeline-item">
-                    <strong>அக்டோபர் – நவம்பர்: ஆசிரியர் செயலமர்வு</strong>
-                    <p>ஒவ்வொரு நாட்டிலிருந்தும் குறிப்பிட்ட தொகை ஆசிரியர்கள் பேரவைப் பணியகத்திற்கு வரவழைக்கப்படுவர். அவர்களுக்குத் தமிழ்வள அறிஞர்களால் கற்பித்தல் தொடர்பான பயிற்சி அளிக்கப்படும். இந்தச் செயலமர்வில் பயிற்சி பெற்ற ஆசிரியர்கள் தத்தம் நாட்டில் உள்ள ஆசிரியர்களுக்குப் பயிற்சி அளிப்பர்.</p>
-                </div>
+                    <div class="timeline-item">
+                        <strong>அக்டோபர் – நவம்பர்: ஆசிரியர் செயலமர்வு</strong>
+                        <p>ஆசிரியர்களுக்குத் தமிழ்வள அறிஞர்களால் நவீன கற்பித்தல் முறைகள் தொடர்பான பயிற்சி அளிக்கப்படும்.</p>
+                    </div>
 
-                <div class="timeline-item">
-                    <strong>திசம்பர் – சனவரி: அரையாண்டுத் தேர்வு</strong>
-                    <p>அனைத்துலக மட்டத்தில் அரையாண்டுத் தேர்வு நடாத்தப்படும். வினாத்தாள்கள் அந்தந்த நாட்டு கல்விக் கழகங்களிற்கு அனுப்பப்படும். தமிழ்மொழிப் பொதுத் தேர்வுக்கு மாணவர்களை அணியஞ் செய்வனவாகவே அரையாண்டு அமையும்.</p>
-                </div>
+                    <div class="timeline-item">
+                        <strong>திசம்பர் – சனவரி: அரையாண்டுத் தேர்வு</strong>
+                        <p>அனைத்துலக மட்டத்தில் மாணவர்களைப் பொதுத்தேர்வுக்கு அணியஞ் செய்யும் அரையாண்டுத் தேர்வுகள் நடைபெறும்.</p>
+                    </div>
 
-                <div class="timeline-item">
-                    <strong>பிப்ரவரி – ஏப்ரல்: புலன்மொழித் தேர்வுகள்</strong>
-                    <p>மாணவர்களின் கேட்டல், பேசுதல், வாசித்தல் திறனை மேம்படுத்தும் நோக்கில் புலன்மொழித் தேர்வுகள் அனைத்து நாடுகளிலும் நடாத்தப்படும்.</p>
-                </div>
+                    <div class="timeline-item">
+                        <strong>பிப்ரவரி – ஏப்ரல்: புலன்மொழித் தேர்வுகள்</strong>
+                        <p>கேட்டல், பேசுதல், வாசித்தல் திறனை மேம்படுத்தும் நோக்கில் புலன்மொழித் தேர்வுகள் நடாத்தப்படும்.</p>
+                    </div>
 
-                <div class="timeline-item">
-                    <strong>யூன்: அனைத்துலகப் பொதுத் தேர்வு</strong>
-                    <p>யூன் முதற் கிழமையில் 12-க்கும் மேற்பட்ட நாடுகளில் அனைத்துலகத் தமிழ்மொழித் தேர்வு ஒரே நேரத்தில் நடாத்தப்படும்.</p>
+                    <div class="timeline-item">
+                        <strong>யூன்: அனைத்துலகப் பொதுத் தேர்வு</strong>
+                        <p>உலகம் முழுவதும் ஒரே நேரத்தில் அனைத்துலகத் தமிழ்மொழிப் பொதுத் தேர்வு நடாத்தப்படும்.</p>
+                    </div>
                 </div>
             </div>
             <div class="about-image">
-                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/calendar.png" alt="கல்வி ஆண்டுச் செயற்பாடுகள்">
+                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/calendar.png" alt="Calendar">
             </div>
         </section>
-
-        <hr class="section-divider">
 
         <section class="about-section reverse">
             <div class="about-text">
                 <h2 class="section-title-left">விடைத்தாள் மதிப்பிடல்</h2>
                 <div class="underline-left"></div>
                 <p>
-                    அனைத்து நாட்டு மாணவர்களின் விடைத்தாள்களும் கல்விக் கழகங்களிலிருந்து பேரவைப் பணியகத்திற்குக் கொண்டு வரப்படும். ஒவ்வொரு நாட்டிலிருந்தும் அந்தந்த வகுப்பு நிலைக்கு உரிய ஆசிரியர்கள் வரவழைக்கப்படுவர். விடைத்தாள்கள் யூன், யூலை, ஆகத்து ஆகிய மாதங்களில் மதிப்பிடப்படும்.
+                    அனைத்து நாட்டு மாணவர்களின் விடைத்தாள்களும் பேரவைப் பணியகத்தில் அனுபவம் வாய்ந்த ஆசிரியர்களால் மிகத் துல்லியமாக மதிப்பிடப்படும்.
                 </p>
                 <ul class="goal-list">
-                    <li>ஆகத்து இறுதியில் ஒவ்வொரு நாட்டுக்கும் தேர்வின் பெறுபேறுகள் அனுப்பி வைக்கப்படும்.</li>
-                    <li>கல்விக் கழகம் வேண்டிக் கொண்டால் குறிப்பிட்ட விடைத்தாள் மீள்மதிப்பீடு செய்யப்படும்.</li>
-                    <li>செப்ரம்பர் காலப்பகுதியில் பெறுபேறுகளுக்கு ஏற்ற வகையில் சான்றிதழ்கள் வழங்கப்படும்.</li>
+                    <li>ஆகத்து இறுதியில் பெறுபேறுகள் அனுப்பி வைக்கப்படும்.</li>
+                    <li>தேவைப்படின் விடைத்தாள்கள் மீள்மதிப்பீடு செய்யப்படும்.</li>
+                    <li>செப்ரம்பரில் தகுதிவாய்ந்த சான்றிதழ்கள் வழங்கப்படும்.</li>
                 </ul>
             </div>
             <div class="about-image">
-                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/exam.png" alt="விடைத்தாள் மதிப்பிடல்">
+                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/exam.png" alt="Exam Evaluation">
             </div>
         </section>
 
@@ -333,6 +358,18 @@ footer strong {
     <footer>
         <p>&copy; 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
     </footer>
+
+    <script>
+        // தேடல் வசதி (Search Filter)
+        function filterFiles() {
+            let input = document.getElementById('fileSearch').value.toLowerCase();
+            let items = document.getElementsByClassName('timeline-item');
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText.toLowerCase();
+                items[i].style.display = text.includes(input) ? "" : "none";
+            }
+        }
+    </script>
 
 </body>
 </html>
