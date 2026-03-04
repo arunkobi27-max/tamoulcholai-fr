@@ -385,56 +385,7 @@
     .quote-card { flex-direction: column; text-align: center; padding: 25px; }
     .refresh-quote { position: absolute; top: 10px; right: 10px; }
 }
-
-/* Dark Mode Colors */
-body.dark-mode {
-    background-color: #121212; /* அடர் கருப்பு */
-    color: #e0e0e0;
-}
-
-body.dark-mode header {
-    background: rgba(20, 20, 20, 0.95);
-}
-
-body.dark-mode .pdf-card, 
-body.dark-mode .quote-card, 
-body.dark-mode .countdown-section {
-    background: #1e1e1e;
-    border-color: #333;
-    color: white;
-}
-
-body.dark-mode .pdf-info h3, 
-body.dark-mode .countdown-title {
-    color: #ffffff;
-}
-
-body.dark-mode .pdf-btn {
-    background: #2c2c2c;
-    color: var(--primary);
-}
-
-/* சுவிட்ச் பட்டன் ஸ்டைல் */
-.dark-mode-toggle {
-    background: #34495e;
-    color: #f1c40f;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    transition: 0.3s;
-    margin-left: 15px;
-}
-
-body.dark-mode .dark-mode-toggle {
-    background: #f1c40f;
-    color: #2c3e50;
-}        
+       
     </style>
 </head>
 <body>
@@ -462,9 +413,6 @@ body.dark-mode .dark-mode-toggle {
                     </ul>
                 </li>
             </ul>
-            <button class="dark-mode-toggle" id="darkModeBtn" onclick="toggleDarkMode()">
-    <i class="fas fa-moon"></i>
-</button>
         </nav>
     </header>
 
@@ -515,19 +463,15 @@ body.dark-mode .dark-mode-toggle {
     </div>
 </div>
 
-<div class="quote-container">
-    <div class="quote-card">
-        <div class="quote-icon">
-            <i class="fas fa-lightbulb"></i>
-        </div>
-        <div class="quote-text">
-            <span class="quote-label">இன்றைய சிந்தனை:</span>
-            <p id="tamil-quote">அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு.</p>
-        </div>
-        <button onclick="changeQuote()" class="refresh-quote" title="புதிய சிந்தனை">
-            <i class="fas fa-sync-alt"></i>
-        </button>
+<div class="quote-card">
+    <div class="quote-icon"><i class="fas fa-lightbulb"></i></div>
+    <div class="quote-text">
+        <span class="quote-label">இன்றைய சிந்தனை:</span>
+        <p id="tamil-quote">அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு.</p>
     </div>
+    <button type="button" onclick="changeMyQuote()" class="refresh-quote">
+        <i class="fas fa-sync-alt" id="refresh-icon"></i>
+    </button>
 </div>
         
 
@@ -592,61 +536,47 @@ body.dark-mode .dark-mode-toggle {
     }, 1000);
 </script>
 <script>
-    const tamilQuotes = [
+    // நீங்கள் கொடுத்த திருக்குறள் பட்டியல்
+    const myTamilQuotes = [
         "அகர முதல எழுத்தெல்லாம் ஆதி பகவன் முதற்றே உலகு.",
         "கற்றதனால் ஆய பயனென்கொல் வாலறிவன் நற்றாள் தொழாஅர் எனின்.",
         "மலர்மிசை ஏகினான் மாணடி சேர்ந்தார் நிலமிசை நீடுவாழ் வார்.",
         "வேண்டுதல் வேண்டாமை இலானடி சேர்ந்தார்க்கு யாண்டும் இடும்பை இல.",
         "இருள்சேர் இருவினையும் சேரா இறைவன் பொருள்சேர் புகழ்புரிந்தார் மாட்டு.",
-        "பொறிவாயில் ஐந்தவித்தான் பொய்தீர் ஒழுக்க நெறிநின்றார் நீடுவாழ் வார்",
+        "பொறிவாயில் ஐந்தவித்தான் பொய்தீர் ஒழுக்க நெறிநின்றார் நீடுவாழ் வார்.",
         "தனக்குவமை இல்லாதான் தாள்சேர்ந்தார்க் கல்லால் மனக்கவலை மாற்றல் அரிது.",
-        "அறவாழி அந்தணன் தாள்சேர்ந்தார்க் கல்லால் பிறவாழி நீந்தல் அரிது ."
-        "கோளில் பொறியின் குணமிலவே எண்குணத்தான் தாளை வணங்காத் தலை."
-        "பபிறவிப் பெருங்கடல் நீந்துவர் நீந்தார் இறைவன் அடிசேரா தார்  ."
+        "அறவாழி அந்தணன் தாள்சேர்ந்தார்க் கல்லால் பிறவாழி நீந்தல் அரிது.",
+        "கோளில் பொறியின் குணமிலவே எண்குணத்தான் தாளை வணங்காத் தலை.",
+        "பிறவிப் பெருங்கடல் நீந்துவர் நீந்தார் இறைவன் அடிசேரா தார்."
     ];
 
-    function changeQuote() {
-        const quoteElement = document.getElementById('tamil-quote');
-        const randomIndex = Math.floor(Math.random() * tamilQuotes.length);
+    function changeMyQuote() {
+        const quoteText = document.getElementById('tamil-quote');
+        const refreshIcon = document.getElementById('refresh-icon');
         
-        // மென்மையான அனிமேஷனுடன் மாற்ற
-        quoteElement.style.opacity = 0;
+        // ஐகான் சுழற்சி அனிமேஷன்
+        if(refreshIcon) {
+            refreshIcon.style.transition = "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+            refreshIcon.style.transform += "rotate(360deg)";
+        }
+
+        // உரை அனிமேஷன்
+        quoteText.style.opacity = 0;
+        quoteText.style.transform = "translateY(10px)";
+
         setTimeout(() => {
-            quoteElement.innerText = tamilQuotes[randomIndex];
-            quoteElement.style.opacity = 1;
+            const randomIndex = Math.floor(Math.random() * myTamilQuotes.length);
+            quoteText.innerText = myTamilQuotes[randomIndex];
+            
+            quoteText.style.opacity = 1;
+            quoteText.style.transform = "translateY(0)";
         }, 300);
     }
 
-    // பக்கம் லோட் ஆகும் போது ஒருமுறை இயக்க
-    window.addEventListener('DOMContentLoaded', changeQuote);
-</script>
-<script>
-    function toggleDarkMode() {
-        const body = document.body;
-        const btn = document.getElementById('darkModeBtn');
-        const icon = btn.querySelector('i');
-
-        // Dark mode-ஐ மாற்று
-        body.classList.toggle('dark-mode');
-
-        // ஐகானை மாற்று (நிலா <-> சூரியன்)
-        if (body.classList.contains('dark-mode')) {
-            icon.classList.replace('fa-moon', 'fa-sun');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            icon.classList.replace('fa-sun', 'fa-moon');
-            localStorage.setItem('theme', 'light');
-        }
-    }
-
-    // பக்கம் லோட் ஆகும்போது பழைய செட்டிங்ஸைச் சரிபார்க்க
-    window.onload = () => {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            document.getElementById('darkModeBtn').querySelector('i').classList.replace('fa-moon', 'fa-sun');
-        }
-    };
-</script>    
+    // பக்கம் லோட் ஆகும் போது முதல் குறளைக் காட்ட
+    window.addEventListener('DOMContentLoaded', (event) => {
+        changeMyQuote();
+    });
+</script>   
 </body>
 </html>
