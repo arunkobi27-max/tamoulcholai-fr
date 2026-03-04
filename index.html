@@ -226,11 +226,6 @@
                 </a>
             </div>
 
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" id="fileSearch" placeholder="தேடுக..." onkeyup="filterFiles()">
-            </div>
-
             <ul>
                 <li><a href="index.html" class="active">முகப்பு</a></li>
                 <li><a href="about.html">எம்மைப்பற்றி</a></li>
@@ -291,17 +286,5 @@
     <footer>
         <p>© 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
     </footer>
-
-    <script>
-        // தேடல் வசதி (இது கோப்புகள் இருக்கும் பக்கத்தில் மட்டுமே வேலை செய்யும்)
-        function filterFiles() {
-            let input = document.getElementById('fileSearch').value.toLowerCase();
-            let cards = document.getElementsByClassName('pdf-card');
-            for (let i = 0; i < cards.length; i++) {
-                let title = cards[i].querySelector('h3').innerText.toLowerCase();
-                cards[i].style.display = title.includes(input) ? "" : "none";
-            }
-        }
-    </script>
 </body>
 </html>
