@@ -259,6 +259,59 @@
 .news-ticker:hover .ticker-content {
     animation-play-state: paused;
 }
+
+.countdown-section {
+    background: white;
+    max-width: 800px;
+    margin: -40px auto 40px; /* Chevauche légèrement la bannière pour un look moderne */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.countdown-title {
+    font-family: 'Kavivanar', cursive;
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown-item {
+    background: var(--bg-light);
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 80px;
+    border-bottom: 4px solid var(--primary);
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+.countdown-item p {
+    margin: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #7f8c8d;
+}
+
+@media (max-width: 600px) {
+    #countdown { gap: 10px; }
+    .countdown-item { min-width: 60px; padding: 10px; }
+    .countdown-item span { font-size: 1.2rem; }
+}        
     </style>
 </head>
 <body>
@@ -289,7 +342,7 @@
         </nav>
     </header>
 
-    <<div class="news-ticker">
+    <div class="news-ticker">
     <div class="ticker-wrapper">
         <div class="ticker-content">
             <span>📢 <b>அறிவிப்பு:</b> 2024-2025 கல்வியாண்டிற்கான பொதுத்தேர்வு வினாத்தாள்கள் இப்போது பதிவேற்றப்பட்டுள்ளன!</span>
@@ -308,6 +361,28 @@
         <h1>தமிழ் இனிமை! நம் பெருமை!</h1>
         <p style="font-size: 1.4rem; color: var(--gold); font-weight: bold;">தமிழ்ச்சோலைத் தலைமைப் பணியகம் - பிரான்சு</p>
     </div>
+
+     <div class="countdown-section">
+    <h2 class="countdown-title">பொதுத் தேர்வுக்கான இறங்குமுகக் கணிப்பு</h2>
+    <div id="countdown">
+        <div class="countdown-item">
+            <span id="days">00</span>
+            <p>Jours</p>
+        </div>
+        <div class="countdown-item">
+            <span id="hours">00</span>
+            <p>Heures</p>
+        </div>
+        <div class="countdown-item">
+            <span id="minutes">00</span>
+            <p>Min</p>
+        </div>
+        <div class="countdown-item">
+            <span id="seconds">00</span>
+            <p>Sec</p>
+        </div>
+    </div>
+</div>   
 
     <main class="container">
         <section class="intro-box">
@@ -347,5 +422,32 @@
     <footer>
         <p>© 2026 <strong>தமிழ் சோலை</strong> | தமிழால் உயர்வோம்</p>
     </footer>
+    <script>
+    // Définissez la date de l'examen ici (Format: Mois Jour, Année Heure)
+    const examDate = new Date("June 6, 2026 00:00:00").getTime();
+
+    const countdownFunction = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = examDate - now;
+
+        // Calcul du temps
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Affichage des résultats
+        document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+        document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+        document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+        document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+        // Si le compte à rebours est fini
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.querySelector(".countdown-section").innerHTML = "<h3>L'examen a commencé ! Bonne chance !</h3>";
+        }
+    }, 1000);
+</script>
 </body>
 </html>
