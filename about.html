@@ -4,261 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>எம்மைப்பற்றி | தமிழ் சோலை</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@700&family=Mukta+Malar:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"><style>
-/* --- ABOUT PAGE CSS: Ultra-Modern & Rich Style --- */
+    
+    <style>
+        /* --- GLOBAL & THEME VARIABLES --- */
+        :root {
+            --primary: #8e44ad;
+            --primary-dark: #6c5ce7;
+            --accent: #e67e22;
+            --secondary: #2c3e50;
+            --gold: #f1c40f;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+            --text-main: #2d3436;
+            --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            --shadow-rich: 0 15px 35px rgba(0,0,0,0.1);
+        }
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-:root {
-    --primary: #8e44ad;
-    --primary-light: #9b59b6;
-    --accent: #e67e22;
-    --secondary: #2c3e50;
-    --gold: #f1c40f;
-    --text-main: #2d3436;
-    --white: #ffffff;
-    --gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
-    --shadow-rich: 0 20px 40px rgba(0,0,0,0.1);
-}
+        body {
+            font-family: 'Baloo Thambi 2', cursive;
+            background: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-/* Base Styles */
-body {
-    font-family: 'Baloo Thambi 2', cursive;
-    background: #f8f9fa;
-    color: var(--text-main);
-    line-height: 1.8;
-}
+        /* --- NAVIGATION & HEADER (Same as Index) --- */
+        header {
+            background: rgba(44, 62, 80, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
 
-/* Navigation */
-header {
-    background: rgba(44, 62, 80, 0.95);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 12px 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-}
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Kavivanar', cursive;
+            font-size: 1.8rem;
+        }
 
-.logo {
-    font-family: 'Kavivanar', cursive;
-    font-size: 1.8rem;
-    color: var(--gold);
-    text-decoration: none;
-}
+        .logo img { height: 50px; margin-right: 12px; }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 15px;
-}
+        nav ul { display: flex; list-style: none; gap: 5px; align-items: center; }
+        nav ul li { position: relative; }
 
-nav ul li a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
 
-nav ul li a:hover, nav ul li a.active {
-    background: var(--gradient);
-    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
-}
+        nav ul li a:hover, nav ul li a.active { background: var(--gradient); }
 
-/* Banner */
-.page-banner {
-    background: linear-gradient(45deg, rgba(108, 92, 231, 0.8), rgba(44, 62, 80, 0.8)), 
-                url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1500');
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    margin-bottom: 50px;
-}
+        /* Dropdown Menu Style */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: var(--shadow-rich);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 10px 0;
+        }
 
-.page-banner h1 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 3.5rem;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
+        .dropdown:hover .dropdown-menu { display: block; }
 
-/* Container */
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 20px;
-}
+        .dropdown-menu li a {
+            color: var(--secondary) !important;
+            padding: 12px 20px;
+            border-radius: 0;
+            font-size: 0.95rem;
+        }
 
-/* Sections Layout */
-.about-section {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin-bottom: 80px;
-    padding: 40px;
-    background: white;
-    border-radius: 40px;
-    box-shadow: var(--shadow-rich);
-}
+        .dropdown-menu li a:hover { background: #f8f9fa; color: var(--primary) !important; }
 
-.about-section.reverse {
-    flex-direction: row-reverse;
-}
+        /* --- BANNER --- */
+        .page-banner {
+            background: linear-gradient(45deg, rgba(108, 92, 231, 0.8), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
 
-.about-text {
-    flex: 1.2;
-}
+        .page-banner h1 { font-family: 'Kavivanar', cursive; font-size: 3.5rem; text-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
-.about-text p {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    text-align: justify;
-}
+        /* --- CONTENT SECTIONS --- */
+        .container { max-width: 1140px; margin: 0 auto; padding: 40px 20px; }
 
-.section-title-left {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.5rem;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
-}
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+            padding: 50px;
+            background: white;
+            border-radius: 40px;
+            box-shadow: var(--shadow-rich);
+            border-top: 8px solid var(--primary);
+        }
 
-.underline-left {
-    width: 60px;
-    height: 5px;
-    background: var(--accent);
-    border-radius: 10px;
-    margin-bottom: 25px;
-}
+        .about-section.reverse { flex-direction: row-reverse; }
 
-/* Images Style */
-.about-image {
-    flex: 0.8;
-}
+        .about-text { flex: 1.2; }
 
-.about-image img {
-    width: 100%;
-    border-radius: 30px;
-    box-shadow: var(--shadow-rich);
-    transform: perspective(1000px) rotateY(-5deg);
-    transition: 0.5s ease;
-}
+        .section-title-left {
+            font-family: 'Kavivanar', cursive;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
 
-.about-section.reverse .about-image img {
-    transform: perspective(1000px) rotateY(5deg);
-}
+        .underline-left {
+            width: 70px;
+            height: 5px;
+            background: var(--accent);
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
 
-.about-image img:hover {
-    transform: perspective(1000px) rotateY(0deg) scale(1.05);
-}
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; color: #444; }
 
-/* Goal List Style */
-.goal-list {
-    list-style: none;
-    margin-top: 20px;
-}
+        /* Goal List */
+        .goal-list { list-style: none; margin-top: 25px; }
+        .goal-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        .goal-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
 
-.goal-list li {
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
+        /* Images */
+        .about-image { flex: 0.8; }
+        .about-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: var(--shadow-rich);
+            transition: 0.5s ease;
+        }
+        .about-image img:hover { transform: scale(1.05); }
 
-.goal-list li::before {
-    content: "\f058"; /* Font Awesome Check Circle */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-size: 1.2rem;
-}
+        /* Divider */
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ccc, transparent);
+            margin: 40px 0;
+        }
 
-/* Divider */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
-    margin: 60px 0;
-}
+        /* --- FOOTER --- */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 20px 40px;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+        footer strong { color: var(--gold); }
 
-/* Footer */
-footer {
-    background: var(--secondary);
-    color: var(--white);
-    padding: 80px 20px 40px;
-    text-align: center;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
-}
-
-footer strong {
-    color: var(--gold);
-}
-
-/* Mobile Responsive */
-@media (max-width: 992px) {
-    .about-section, .about-section.reverse {
-        flex-direction: column;
-        padding: 30px;
-        text-align: center;
-    }
-    .about-image img {
-        transform: none !important;
-        margin-top: 30px;
-    }
-    .section-title-left {
-        font-size: 2rem;
-    }
-    .underline-left {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-</style>
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 992px) {
+            nav { flex-direction: column; gap: 15px; }
+            .about-section, .about-section.reverse {
+                flex-direction: column;
+                padding: 30px;
+                text-align: center;
+            }
+            .about-text p { text-align: center; }
+            .underline-left { margin: 0 auto 25px; }
+            .page-banner h1 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
-           <div class="logo">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-        <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Tamilcholai Logo" style="height: 50px; width: auto; margin-right: 15px;">
-        தமிழ்ச்சோலை
-    </a>
-</div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo">
+                    தமிழ்ச்சோலை
+                </a>
+            </div>
             <ul>
                 <li><a href="index.html">முகப்பு</a></li>
                 <li><a href="about.html" class="active">எம்மைப்பற்றி</a></li>
                 <li><a href="activities.html">செயற்பாடுகள்</a></li>
                 <li><a href="events.html">நிகழ்வுகள்</a></li>
                 <li class="dropdown">
-        <a href="files.html" class="active">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-            <li><a href="half-yearly.html"><i class="fas fa-file-alt"></i> அரையாண்டுத் தேர்வு</a></li>
-            <li><a href="public-exam.html"><i class="fas fa-graduation-cap"></i> பொதுத்தேர்வு</a></li>
-            <li><a href="essays.html"><i class="fas fa-pen-nib"></i> கட்டுரைகள்</a></li>
-        </ul>
-    </li>
+                    <a href="files.html">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="half-yearly.html">அரையாண்டுத் தேர்வு</a></li>
+                        <li><a href="public-exam.html">பொதுத்தேர்வு</a></li>
+                        <li><a href="essays.html">கட்டுரைகள்</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -274,14 +255,14 @@ footer strong {
                 <h2 class="section-title-left">தோற்றம்</h2>
                 <div class="underline-left"></div>
                 <p>
-                    தமிழர் கல்வி மேம்பாட்டுப் பேரவை பிரான்சில் 2004 இல் தோற்றுவிக்கப்பட்டது. எமது ஈழத்தாயகத்தில் பல்வேறு நெருக்கடிகளுக்கு ஆளாகி அங்கு வாழமுடியாத சூழ்நிலையில் தமிழ் மக்கள் புலம்பெயர்ந்து உலகின் பல நாடுகளில் வாழ்ந்து வருகின்றனர். புலம்பெயர்ந்து வாழும் சூழலில் தமிழ்த் தலைமுறையினரின் வாழ்வியல் முறை சிதைந்துவிடாமல் அவர்கள் தம் இன அடையாளத்தைக் காக்கும் பொருட்டும் உலகம் முழுவதும் சிதறிக் கிடக்கின்ற எமது புலம் பெயர் தமிழ் இனத்தை மொழி மூலம் ஒரு குடையின் கீழ் ஒன்றிணைக்க முடியும் என்கின்ற நல்லெண்ணத்தோடும் நிறுவப்பட்டதே தமிழர் கல்வி மேம்பாட்டுப் பேரவை.
+                    தமிழர் கல்வி மேம்பாட்டுப் பேரவை பிரான்சில் 2004 இல் தோற்றுவிக்கப்பட்டது. எமது ஈழத்தாயகத்தில் பல்வேறு நெருக்கடிகளுக்கு ஆளாகி அங்கு வாழமுடியாத சூழ்நிலையில் தமிழ் மக்கள் புலம்பெயர்ந்து வாழ்ந்து வருகின்றனர். புலம்பெயர்ந்து வாழும் சூழலில் தமிழ்த் தலைமுறையினரின் வாழ்வியல் முறை சிதைந்துவிடாமல் அவர்கள் தம் இன அடையாளத்தைக் காக்கும் பொருட்டும் உலகம் முழுவதும் சிதறிக் கிடக்கின்ற எமது புலம் பெயர் தமிழ் இனத்தை மொழி மூலம் ஒரு குடையின் கீழ் ஒன்றிணைக்க முடியும் என்கின்ற நல்லெண்ணத்தோடும் நிறுவப்பட்டதே தமிழர் கல்வி மேம்பாட்டுப் பேரவை.
                 </p>
                 <p>
-                    மொழி என்பது வெறுமனே தொடர்பாடற் கருவி மட்டுமல்ல எமது இனத்தின் அடையாளம், கலை இலக்கிய, பண்பாட்டு விழுமியம். மொழி இன்றேல் இனமில்லை என்பதை அறிந்து புலம்பெயர்ந்து வாழும் எம் தமிழ்த்தலைமுறையினர் தாய் மொழியறியாமல் வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக இணைத்துப் பயணிக்கத் தொடங்கியதுதான் தமிழர் கல்வி மேம்பாட்டுப் பேரவை.
+                    மொழி இன்றேல் இனமில்லை என்பதை அறிந்து புலம்பெயர்ந்து வாழும் எம் தமிழ்த்தலைமுறையினர் தாய் மொழியறியாமல் வீழ்ந்து விடக்கூடாது என்ற உயரிய நோக்குடன் 14 நாடுகளை ஒன்றாக இணைத்துப் பயணிக்கத் தொடங்கியதுதான் தமிழர் கல்வி மேம்பாட்டுப் பேரவை.
                 </p>
             </div>
             <div class="about-image">
-                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/sunrise-compressed.jpg" alt="தோற்றம் - உதய சூரியன்">
+                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/sunrise-compressed.jpg" alt="Sunrise">
             </div>
         </section>
 
@@ -292,22 +273,17 @@ footer strong {
                 <h2 class="section-title-left">நோக்கம்</h2>
                 <div class="underline-left"></div>
                 <p>
-                    உலகின் பல்வேறு நாடுகளில் வாழ்கின்ற இளந் தமிழ்த் தலைமுறையினர் வாழிட நாட்டு மொழியைக் கற்றுக் கொள்வது பேசுவது அவரவர் வாழ்வியலுக்கு இன்றியமையாதது. தமிழ்த் தலைமுறையினரும் அந்தந்த நாட்டு மொழியைக் கற்று வாழிட நாட்டு கல்வியில் கல்விமான்களாக விளங்குவது எம் இனத்தின் தேவைகளில் ஒன்றாகும். அதேவேளை எம் இளந் தலைமுறையினர் தாய்த்தமிழை மறந்து விடாது தன் அடையாளத்துடன் வாழவேண்டும்.
-                </p>
-                <p>
-                    இந்த நிலையில் தமிழ்த் தலைமுறையினருக்கு தாய்த் தமிழைக் கற்பித்தலை முதன்மை நோக்கமாகக் கொண்டு தமிழர் கல்வி மேம்பாட்டுப் பேரவை செயற்படுகின்றது. தொன்மையான செம்மொழியாகிய எம் தாய்மொழியை எமது இளந்தலைமுறைக்கு ஊட்டுவதன் ஊடாகத் தமிழ்மொழியைக் காத்து வளர்ப்பதையும் கல்விப் பேரவை நோக்கமாகக் கொண்டுள்ளது.
+                    தமிழ்த் தலைமுறையினருக்கு தாய்த் தமிழைக் கற்பித்தலை முதன்மை நோக்கமாகக் கொண்டு தமிழர் கல்வி மேம்பாட்டுப் பேரவை செயற்படுகின்றது. தொன்மையான செம்மொழியாகிய எம் தாய்மொழியை எமது இளந்தலைமுறைக்கு ஊட்டுவதன் ஊடாகத் தமிழ்மொழியைக் காத்து வளர்ப்பதையும் கல்விப் பேரவை நோக்கமாகக் கொண்டுள்ளது.
                 </p>
                 <ul class="goal-list">
-                    <li>தமிழ் இன வரலாறு, கலை, பண்பாடு முதலானவற்றைத் தாய்மொழிக் கல்வி ஊடாக இளைய தலைமுறையினர் அறியச் செய்தல்.</li>
-                    <li>வாழிட நாட்டு வரலாற்றையும் பண்பாட்டையும் அறிந்து அந்த நாட்டின் சட்டதிட்டங்களை மதித்து ஒன்றி வாழத்தக்க நிலையை உருவாக்குதல்.</li>
+                    <li>தமிழ் இன வரலாறு, கலை, பண்பாடு முதலானவற்றை இளைய தலைமுறையினர் அறியச் செய்தல்.</li>
+                    <li>வாழிட நாட்டு வரலாற்றையும் பண்பாட்டையும் அறிந்து ஒன்றி வாழத்தக்க நிலையை உருவாக்குதல்.</li>
                     <li>தாய்நாட்டுக்கும் வாழிட நாட்டுக்கும் பயன் தரத்தக்க வளமான குமுகாயத்தை உருவாக்குதல்.</li>
-                    <li>வளர் தமிழ்ப் பாடநூல்களின் தெளிவான விரிவாக்கத்தை உள்ளடக்கிய அறிவை வழங்குதல்.</li>
-                    <li>எம் இனத்தின் மொழி பண்பாட்டு விழுமியங்களை சமச்சீர்க் கல்வி மூலம் பரப்புதல்.</li>
-                    <li>இயன்றவரை நற்றமிழில் கற்றல் – கற்பித்தல்.</li>
+                    <li>எமது இனத்தின் மொழி பண்பாட்டு விழுமியங்களை சமச்சீர்க் கல்வி மூலம் பரப்புதல்.</li>
                 </ul>
             </div>
             <div class="about-image">
-                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/vaagai_maram.jpg" alt="நோக்கம் - வாகை மரம்">
+                <img src="http://www.tamiledc.com/wp-content/uploads/2021/06/vaagai_maram.jpg" alt="Mission">
             </div>
         </section>
 
