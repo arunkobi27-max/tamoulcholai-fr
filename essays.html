@@ -4,285 +4,285 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>கட்டுரைகள் | தமிழ் சோலை</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;700&family=Kavivanar&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"><style>
-    /* --- ESSAY PAGE CSS : Warm & Academic Style --- */
-
-:root {
-    --essay-primary: #e67e22;      /* ஆரஞ்சு - படைப்பாற்றல் */
-    --essay-dark: #d35400;
-    --essay-bg: #fdfaf6;          /* லேசான காகித நிறம் */
-    --essay-shadow: 0 10px 30px rgba(211, 84, 0, 0.1);
-}
-
-/* பேனர் ஸ்டைல் */
-.page-banner {
-    background: linear-gradient(rgba(211, 84, 0, 0.7), rgba(44, 62, 80, 0.85)), 
-                url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1500');
-    background-size: cover;
-    background-position: center;
-    height: 280px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-}
-
-.page-banner h1 {
-    font-family: 'Kavivanar', cursive;
-    font-size: 3.5rem;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-/* கட்டுரை கார்டுகள் (Essay Cards) */
-.pdf-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 35px;
-    padding: 20px 0;
-}
-
-.pdf-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: all 0.4s ease;
-    border-bottom: 5px solid var(--essay-primary);
-    display: flex;
-    flex-direction: column;
-}
-
-.pdf-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--essay-shadow);
-    border-bottom: 5px solid var(--essay-dark);
-}
-
-.pdf-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    filter: sepia(20%); /* பழைய காகித உணர்வு கொடுக்க */
-}
-
-.pdf-info {
-    padding: 25px;
-    text-align: center;
-}
-
-.pdf-info h3 {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    margin-bottom: 15px;
-    font-family: 'Baloo Thambi 2', cursive;
-}
-
-.pdf-info span {
-    display: inline-block;
-    padding: 10px 25px;
-    background: var(--essay-primary);
-    color: white;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.pdf-card:hover .pdf-info span {
-    background: var(--essay-dark);
-    letter-spacing: 1px;
-}
-
-/* பிரிவு தலைப்புகள் */
-.section-title-left {
-    font-family: 'Kavivanar', cursive;
-    font-size: 2.2rem;
-    color: var(--essay-dark);
-}
-
-.essay-section p {
-    color: #7f8c8d;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-/* மொபைல் வடிவம் */
-@media (max-width: 768px) {
-    .pdf-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
     
-    .page-banner h1 {
-        font-size: 2.2rem;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;600;800&family=Kavivanar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- GLOBAL & THEME VARIABLES --- */
+        :root {
+            --primary: #e67e22; /* ஆரஞ்சு - படைப்பாற்றல் */
+            --primary-dark: #d35400;
+            --secondary: #2c3e50;
+            --gold: #f1c40f;
+            --white: #ffffff;
+            --bg-light: #fdfaf6; /* மென்மையான காகித நிறம் */
+            --text-main: #2d3436;
+            --gradient: linear-gradient(135deg, #e67e22, #f39c12);
+            --shadow-rich: 0 15px 35px rgba(211, 84, 0, 0.15);
+        }
 
-    .pdf-info {
-        padding: 15px;
-    }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    .pdf-info h3 {
-        font-size: 1rem;
-    }
-}
-</style>
+        body {
+            font-family: 'Baloo Thambi 2', cursive;
+            background: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background: rgba(44, 62, 80, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Kavivanar', cursive;
+            font-size: 1.8rem;
+        }
+
+        .logo img { height: 50px; margin-right: 12px; }
+
+        nav ul { display: flex; list-style: none; gap: 5px; align-items: center; }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active { background: var(--gradient); }
+
+        /* Dropdown */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: var(--shadow-rich);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li a { color: var(--secondary) !important; display: block; border-radius: 0; }
+        .dropdown-menu li a:hover { background: #f8f9fa; color: var(--primary) !important; }
+
+        /* --- BANNER (தலைப்பு இங்கே பெரியதாக்கப்பட்டுள்ளது) --- */
+        .page-banner {
+            background: linear-gradient(rgba(211, 84, 0, 0.75), rgba(44, 62, 80, 0.85)), 
+                        url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            height: 320px; /* சற்றே உயரம் கூட்டப்பட்டது */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            text-align: center;
+        }
+
+        .page-banner h1 {
+            font-family: 'Kavivanar', cursive;
+            font-size: 4rem; /* தலைப்பு பெரியதாக்கப்பட்டுள்ளது */
+            text-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            letter-spacing: 2px;
+        }
+
+        /* --- ESSAY CONTENT --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        .section-title-left {
+            font-family: 'Kavivanar', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .underline-left {
+            width: 70px; height: 6px; background: var(--primary);
+            border-radius: 10px; margin-bottom: 25px;
+        }
+
+        /* PDF Grid */
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .pdf-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.4s ease;
+            border-bottom: 6px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdf-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-rich);
+        }
+
+        .pdf-card img {
+            width: 100%; height: 180px; object-fit: cover;
+            filter: sepia(30%); transition: 0.4s;
+        }
+
+        .pdf-info { padding: 25px; text-align: center; }
+        .pdf-info h3 { font-size: 1.4rem; color: var(--secondary); margin-bottom: 15px; }
+        
+        .pdf-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .pdf-card:hover .pdf-btn { background: var(--primary-dark); padding: 10px 35px; }
+
+        /* Divider */
+        .section-divider { border: 0; height: 2px; background: #eee; margin: 60px 0; }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.3s;
+            margin: 40px 0;
+        }
+        .back-btn:hover { background: var(--primary-dark); transform: scale(1.05); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 80px 20px 40px;
+            text-align: center;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            margin-top: 50px;
+        }
+        footer strong { color: var(--gold); }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            .page-banner h1 { font-size: 2.8rem; }
+            .pdf-grid { grid-template-columns: 1fr; }
+            nav { flex-direction: column; gap: 10px; }
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <nav>
             <div class="logo">
-    <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-        <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Tamilcholai Logo" style="height: 50px; width: auto; margin-right: 15px;">
-        தமிழ்ச்சோலை
-    </a>
-</div>
+                <a href="index.html">
+                    <img src="https://www.tamoulcholai.fr/img/logo/logo.png" alt="Logo">
+                    தமிழ்ச்சோலை
+                </a>
+            </div>
             <ul>
                 <li><a href="index.html">முகப்பு</a></li>
                 <li><a href="about.html">எம்மைப்பற்றி</a></li>
                 <li><a href="activities.html">செயற்பாடுகள்</a></li>
                 <li><a href="events.html">நிகழ்வுகள்</a></li>
                 <li class="dropdown">
-        <a href="files.html" class="active">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
-        <ul class="dropdown-menu">
-            <li><a href="half-yearly.html"><i class="fas fa-file-alt"></i> அரையாண்டுத் தேர்வு</a></li>
-            <li><a href="public-exam.html"><i class="fas fa-graduation-cap"></i> பொதுத்தேர்வு</a></li>
-            <li><a href="essays.html"><i class="fas fa-pen-nib"></i> கட்டுரைகள்</a></li>
-        </ul>
-    </li>
+                    <a href="files.html" class="active">கோப்புகள் <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="half-yearly.html">அரையாண்டுத் தேர்வு</a></li>
+                        <li><a href="public-exam.html">பொதுத்தேர்வு</a></li>
+                        <li><a href="essays.html">கட்டுரைகள்</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <div class="page-banner"
-        <h1>கட்டுரை</h1>
+    <div class="page-banner">
+        <h1>கட்டுரைகள்</h1>
     </div>
 
     <main class="container">
         
         <section class="essay-section">
-            <h2 class="section-title-left">பொதுத்தலைப்பு</h2>
-            <div class="underline-left" style="background: #e67e22;"></div>
-            <p>சமூகம், பண்பாடு மற்றும் பொது அறிவு சார்ந்த கட்டுரைத் தலைப்புகள்:</p>
+            <h2 class="section-title-left">பொதுத்தலைப்புகள்</h2>
+            <div class="underline-left"></div>
+            <p>சமூகம், பண்பாடு மற்றும் பொது அறிவு சார்ந்த கட்டுரைத் தொகுப்புகள் இங்குக் கிடைக்கும்:</p>
             
             <div class="pdf-grid">
-                <a href="pdfs/essays/enathu-chellap-perani.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>எனது செல்ல உயிரி</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
                 <a href="pdfs/essays/kadamai.pdf" target="_blank" class="pdf-card">
                     <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
                     <div class="pdf-info">
                         <h3>கடமை</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
+                        <span class="pdf-btn"><i class="fas fa-file-pdf"></i> வாசிக்க</span>
                     </div>
                 </a>
                 <a href="pdfs/essays/puvi-veppamayamathal.pdf" target="_blank" class="pdf-card">
                     <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
                     <div class="pdf-info">
                         <h3>பூகோள வெப்பமடைதல்</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
+                        <span class="pdf-btn"><i class="fas fa-file-pdf"></i> வாசிக்க</span>
                     </div>
                 </a>
-                <a href="pdfs/essays/ankadi.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>அங்காடி</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/somasuntharap-pulavar.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>சோமசுந்தரப் புலவர்</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/tamilil-pesuvoom.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>தமிழில் பேசுவோம்</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/tamil-palli.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>தமிழ்ப் பள்ளிகள்</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/ulavuththolil.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>உழவுத் தொழில்</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/malai-nal.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>மழை நாள்</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/uruvakaddurai.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>உருவகக்கட்டுரை</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/kadalkara-kaddsi.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>கடற்கரைக் காட்சி</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/varunanai-kaddurai.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png" alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>வருணனைக் கட்டுரை</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-                <a href="pdfs/essays/unavu-nerukkadi.pdf" target="_blank" class="pdf-card">
-                    <img src="https://www.tamoulcholai.fr/admin-page/uploads/koppukal_covers/default_cover.png
-                        alt="கட்டுரை">
-                    <div class="pdf-info">
-                        <h3>உணவு நெருக்கடி</h3>
-                        <span><i class="fas fa-file-alt"></i> வாசிக்கத் தொடவும்</span>
-                    </div>
-                </a>
-            </div>
+                </div>
         </section>
 
         <hr class="section-divider">
 
-        <section class="essay-section" style="margin-top: 50px;">
-            <h2 class="section-title-left">பாடநூல்த்தலைப்பு</h2>
-            <div class="underline-left" style="background: #e67e22;"></div>
-            <p>வளர் தமிழ் பாடநூல்களில் உள்ள பாடத்திட்டம் சார்ந்த கட்டுரைத் தலைப்புகள்:</p>
+        <section class="essay-section">
+            <h2 class="section-title-left">பாடநூல் கட்டுரைகள்</h2>
+            <div class="underline-left"></div>
+            <p>வளர் தமிழ் பாடத்திட்டம் சார்ந்த 12 நிலைகளுக்கான கட்டுரைகள்:</p>
             
             <div class="pdf-grid">
                 <script>
-                    // 12 நிலைகளுக்கான பாடநூல் கட்டுரைகள்
                     for (let i = 1; i <= 12; i++) {
                         document.write(`
-                            <a href="pdfs/essays/textbook_grade${i}.pdf" target="_blank" class="pdf-card">
-                                <img src="https://via.placeholder.com/200x280/fef5e7/d35400?text=நிலை+${i}" alt="நிலை ${i}">
+                            <a href="pdfs/essays/grade${i}.pdf" target="_blank" class="pdf-card">
+                                <img src="https://via.placeholder.com/300x200/fef5e7/d35400?text=Grade+${i}" alt="Grade ${i}">
                                 <div class="pdf-info">
-                                    <h3>கட்டுரை - நிலை ${i}</h3>
-                                    <span><i class="fas fa-book"></i> பாடநூல் சார்ந்தது</span>
+                                    <h3>நிலை ${i} கட்டுரைகள்</h3>
+                                    <span class="pdf-btn"><i class="fas fa-book-open"></i> பாடநூல் சார்ந்தது</span>
                                 </div>
                             </a>
                         `);
@@ -292,8 +292,9 @@
         </section>
 
         <div style="text-align: center; margin-top: 50px;">
-            <a href="files.html" class="card-btn" style="background: #d35400;"><i class="fas fa-arrow-left"></i> கோப்புகள் பக்கத்திற்குச் செல்ல</a>
+            <a href="files.html" class="back-btn"><i class="fas fa-arrow-left"></i> கோப்புகள் பக்கத்திற்குச் செல்ல</a>
         </div>
+
     </main>
 
     <footer>
