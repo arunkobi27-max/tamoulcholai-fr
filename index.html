@@ -385,6 +385,56 @@
     .quote-card { flex-direction: column; text-align: center; padding: 25px; }
     .refresh-quote { position: absolute; top: 10px; right: 10px; }
 }
+
+/* Dark Mode Colors */
+body.dark-mode {
+    background-color: #121212; /* அடர் கருப்பு */
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background: rgba(20, 20, 20, 0.95);
+}
+
+body.dark-mode .pdf-card, 
+body.dark-mode .quote-card, 
+body.dark-mode .countdown-section {
+    background: #1e1e1e;
+    border-color: #333;
+    color: white;
+}
+
+body.dark-mode .pdf-info h3, 
+body.dark-mode .countdown-title {
+    color: #ffffff;
+}
+
+body.dark-mode .pdf-btn {
+    background: #2c2c2c;
+    color: var(--primary);
+}
+
+/* சுவிட்ச் பட்டன் ஸ்டைல் */
+.dark-mode-toggle {
+    background: #34495e;
+    color: #f1c40f;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    margin-left: 15px;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background: #f1c40f;
+    color: #2c3e50;
+}        
     </style>
 </head>
 <body>
@@ -412,6 +462,9 @@
                     </ul>
                 </li>
             </ul>
+            <button class="dark-mode-toggle" id="darkModeBtn" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i>
+</button>
         </nav>
     </header>
 
@@ -565,6 +618,34 @@
 
     // பக்கம் லோட் ஆகும் போது ஒருமுறை இயக்க
     window.addEventListener('DOMContentLoaded', changeQuote);
-</script> 
+</script>
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        const btn = document.getElementById('darkModeBtn');
+        const icon = btn.querySelector('i');
+
+        // Dark mode-ஐ மாற்று
+        body.classList.toggle('dark-mode');
+
+        // ஐகானை மாற்று (நிலா <-> சூரியன்)
+        if (body.classList.contains('dark-mode')) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    // பக்கம் லோட் ஆகும்போது பழைய செட்டிங்ஸைச் சரிபார்க்க
+    window.onload = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            document.getElementById('darkModeBtn').querySelector('i').classList.replace('fa-moon', 'fa-sun');
+        }
+    };
+</script>    
 </body>
 </html>
